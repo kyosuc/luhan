@@ -181,7 +181,7 @@ function updateLanguageButtons() {
 
 function renderAboutContactNavLabel(node, lang = state.lang) {
   const copy = lang === "zh"
-    ? { left: "??", right: "??", aria: "?????" }
+    ? { left: t("nav.about", lang), right: t("nav.contact", lang), aria: t("nav.aboutContact", lang) }
     : { left: "About", right: "Contact", aria: "About and Contact" };
 
   node.classList.add("nav-about-contact-link");
@@ -600,6 +600,7 @@ function openModal(artworkId) {
   state.activeArtworkId = artworkId;
   renderModal();
   modal.hidden = false;
+  modal.classList.remove("is-closing");
   document.body.style.overflow = "hidden";
   window.requestAnimationFrame(() => {
     modal.classList.add("is-active");
@@ -613,10 +614,12 @@ function closeModal() {
     window.clearTimeout(state.modalCloseTimer);
     state.modalCloseTimer = null;
   }
+  modal.classList.add("is-closing");
   modal.classList.remove("is-active");
   const delay = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 20 : 420;
   state.modalCloseTimer = window.setTimeout(() => {
     modal.hidden = true;
+    modal.classList.remove("is-closing");
     document.body.style.overflow = "";
     state.activeArtworkId = null;
     state.modalCloseTimer = null;

@@ -1980,6 +1980,11 @@ body[data-page="home"] .hero-slide:nth-child(3n) img {
   opacity: 1;
 }
 
+.modal.is-closing {
+  opacity: 0;
+  transition-duration: 520ms;
+}
+
 .modal__backdrop {
   opacity: 0;
   background: rgba(0, 0, 0, 0.72);
@@ -1991,6 +1996,13 @@ body[data-page="home"] .hero-slide:nth-child(3n) img {
   opacity: 1;
   background: rgba(0, 0, 0, 0.84);
   backdrop-filter: blur(18px);
+}
+
+.modal.is-closing .modal__backdrop {
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.58);
+  backdrop-filter: blur(0);
+  transition-duration: 360ms;
 }
 
 .modal__dialog {
@@ -2037,6 +2049,13 @@ body[data-page="home"] .hero-slide:nth-child(3n) img {
   opacity: 1;
   filter: brightness(0.98) saturate(0.98) contrast(1.01) blur(0);
   transform: scale(1);
+}
+
+.modal.is-closing .modal__figure img {
+  opacity: 0;
+  filter: brightness(0.56) saturate(0.82) contrast(1.01) blur(3px);
+  transform: scale(0.994);
+  transition-duration: 520ms;
 }
 
 .modal__body {
