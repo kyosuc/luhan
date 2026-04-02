@@ -147,8 +147,8 @@ window.LUHAN_SITE_DATA = {
       "xiaohongshu": {
         "label": "Xiaohongshu",
         "handle": "LU_HAN",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%E7%92%90%E6%B1%97",
-        "app_url": "xhsdiscover://search_result?keyword=%E7%92%90%E6%B1%97"
+        "url": "https://www.xiaohongshu.com/search_result?keyword=LU_HAN",
+        "app_url": "xhsdiscover://search_result?keyword=LU_HAN"
       }
     },
     "brand": {
@@ -166,11 +166,11 @@ window.LUHAN_SITE_DATA = {
     "bio": {
       "zh": [
         "璐汗，1983 年生，现居上海。本科就读于白俄罗斯国立艺术学院，2010 年以专业总分第一名考入中国美术学院油画系第一工作室攻读研究生。",
-        "2012 年赴巴黎艺术城进行学术交流，2013 年获得中国美术学院硕士学位。她的近年创作围绕绘画、材料、时间与熵之间的关系展开。"
+        "2012 年赴巴黎艺术城进行学术交流，2013 年获得中国美术学院硕士学位。他的近年创作围绕绘画、材料、时间与熵之间的关系展开。"
       ],
       "en": [
-        "Lu Han, born in 1983, lives and works in Shanghai. She studied at the Belarusian State Academy of Arts and entered the First Studio of the Oil Painting Department at China Academy of Art in 2010 with the top score in her major examination.",
-        "In 2012 she undertook academic exchange at Cite Internationale des Arts, Paris, and received her master's degree from China Academy of Art in 2013. Her recent practice moves between painting, material inquiry, time, and entropy."
+        "Lu Han, born in 1983, lives and works in Shanghai. He studied at the Belarusian State Academy of Arts and entered the First Studio of the Oil Painting Department at China Academy of Art in 2010 with the top score in his major examination.",
+        "In 2012 he undertook academic exchange at Cite Internationale des Arts, Paris, and received his master's degree from China Academy of Art in 2013. His recent practice moves between painting, material inquiry, time, and entropy."
       ]
     },
     "statement": {
@@ -1407,7 +1407,7 @@ window.LUHAN_SITE_DATA = {
       "id": "the-honey-whisperer-2023",
       "slug": "the-honey-whisperer-2023",
       "year": 2023,
-      "title_en": "The Whisperer",
+      "title_en": "The Honey Whisperer",
       "title_zh": "密语者",
       "medium_en": "Oil on Canvas",
       "medium_zh": "Oil on Canvas",
