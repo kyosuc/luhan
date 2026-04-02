@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lu Han</title>
+    <meta name="description" content="Official website of painter Lu Han.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <script src="./assets/js/site-data.js" defer></script>
+    <script src="./assets/js/site.js" defer></script>
+  </head>
+  <body data-page="home" data-base=".">
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand brand--home" href="./index.html" aria-label="Lu Han home">
+          <img class="brand__signature" id="home-brand-logo" src="" alt="">
+        </a>
+        <div class="site-nav">
+          <nav class="site-nav__links" aria-label="Primary">
+            <a href="./index.html" aria-current="page" data-i18n="nav.home">Home</a>
+            <a href="./works/index.html" data-i18n="nav.works">Works</a>
+            <a href="./about.html" data-i18n="nav.aboutContact">About&Contact</a>
+          </nav>
+          <div class="language-toggle" aria-label="Language switcher">
+            <button class="language-toggle__button" type="button" data-lang-button="en">EN</button>
+            <button class="language-toggle__button" type="button" data-lang-button="zh">中文</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="hero" aria-label="Homepage hero">
+        <div class="hero__stage" id="hero-stage" aria-hidden="true"></div>
+        <div class="hero__inner">
+          <div class="hero__content reveal">
+            <h1 class="hero__artist" data-artist-name>Lu Han</h1>
+            <div class="hero__cta-row">
+              <a class="button-link" href="./works/index.html" data-i18n="home.ctaYear">WORKS</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <span><span data-artist-name>Lu Han</span> / <span data-current-year></span></span>
+        <div class="site-footer__links">
+
+          <span>LUHAN All rights reserved.</span>
+
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
