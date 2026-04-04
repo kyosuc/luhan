@@ -824,6 +824,7 @@ body[data-page="home"] .site-header {
   margin-top: 12px;
 }
 
+
 .about-portrait {
   overflow: hidden;
   padding: 0;
@@ -877,7 +878,7 @@ body[data-page="home"] .site-header {
 }
 
 .about-contact-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 20px;
 }
 
@@ -948,6 +949,23 @@ body[data-page="home"] .site-header {
   color: #a4ee8f;
 }
 
+.about-contact-card__handle.about-contact-card__handle--pdf {
+  color: #75a8ff;
+}
+
+.about-contact-card__handle.about-contact-card__handle--pdf:hover {
+  color: #9bc0ff;
+}
+
+#about-contact-pdf-card .about-contact-card__handle {
+  color: #75a8ff;
+}
+
+#about-contact-pdf-card:hover .about-contact-card__handle,
+#about-contact-pdf-card:focus-within .about-contact-card__handle {
+  color: #9bc0ff;
+}
+
 .contact-icon--instagram {
   color: #f7d5ef;
   background:
@@ -966,6 +984,12 @@ body[data-page="home"] .site-header {
   color: #7fdc71;
   background: rgba(88, 214, 97, 0.12);
   border-color: rgba(88, 214, 97, 0.24);
+}
+
+.contact-icon--pdf {
+  color: #75a8ff;
+  background: rgba(88, 134, 255, 0.12);
+  border-color: rgba(117, 168, 255, 0.24);
 }
 
 .about-contact-grid .about-contact-card.reveal {
@@ -989,6 +1013,10 @@ body[data-page="home"] .site-header {
 
 .about-contact-grid .about-contact-card:nth-child(3).reveal {
   transition-delay: 460ms;
+}
+
+.about-contact-grid .about-contact-card:nth-child(4).reveal {
+  transition-delay: 630ms;
 }
 
 .contact-stage {

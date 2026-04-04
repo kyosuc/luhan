@@ -162,6 +162,7 @@ window.LUHAN_SITE_DATA = {
   },
   "about": {
     "portrait": "assets/generated/about/portrait.jpg",
+    "pdf": "assets/generated/about/璐汗2026作品.pdf",
     "bio": {
       "zh": [
         "璐汗，1983 年生，现居上海。本科就读于白俄罗斯国立艺术学院，2010 年以专业总分第一名考入中国美术学院油画系第一工作室攻读研究生。",

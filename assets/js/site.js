@@ -474,6 +474,53 @@ function renderAboutContactSection() {
     phoneLink.href = `tel:${SITE_DATA.contact.phone.replace(/\s+/g, "")}`;
     phoneLink.setAttribute("aria-label", `WeChat / Phone: ${SITE_DATA.contact.phone}`);
   }
+
+  const pdfCard = document.getElementById("about-contact-pdf-card");
+  const pdfLink = document.getElementById("about-contact-pdf");
+  const aboutPdf = SITE_DATA.about?.pdf;
+  if (pdfCard && pdfLink && aboutPdf) {
+    const pdfFileName = aboutPdf.split("/").pop() || "PDF";
+    const pdfHref = encodeURI(basePath(aboutPdf));
+    const isTouchLike = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+    pdfCard.hidden = false;
+    pdfCard.setAttribute("role", "link");
+    pdfCard.tabIndex = 0;
+    pdfCard.style.cursor = "pointer";
+    pdfLink.href = pdfHref;
+    pdfLink.setAttribute("aria-label", `PDF Download: ${pdfFileName}`);
+
+    if (isTouchLike) {
+      pdfLink.removeAttribute("download");
+      pdfLink.target = "_blank";
+      pdfLink.rel = "noreferrer";
+      pdfCard.onclick = () => {
+        window.location.href = pdfHref;
+      };
+      pdfCard.onkeydown = (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          window.location.href = pdfHref;
+        }
+      };
+    } else {
+      pdfLink.setAttribute("download", pdfFileName);
+      pdfLink.removeAttribute("target");
+      pdfLink.removeAttribute("rel");
+      pdfCard.onclick = () => {
+        pdfLink.click();
+      };
+      pdfCard.onkeydown = (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          pdfLink.click();
+        }
+      };
+    }
+  } else if (pdfCard) {
+    pdfCard.hidden = true;
+    pdfCard.onclick = null;
+    pdfCard.onkeydown = null;
+  }
 }
 
 function renderAboutPage() {
