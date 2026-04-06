@@ -88,9 +88,20 @@ const state = {
   modalCloseTimer: null,
   homeIntroPlayed: false,
   homeIntroTimer: null,
+  homeIntroStartedAt: null,
+  homeNameStartTimer: null,
+  homeNameFrame: null,
+  homeNameTarget: null,
 };
 
 let revealObserver = null;
+
+const HOME_NAME_REVEAL_DELAY_MS = 1560;
+const HOME_NAME_REVEAL_DURATION_MS = 1080;
+const HOME_NAME_GLYPHS = {
+  en: ["L", "V", "X", "I", "N", "H", "R", "A", "U", "M", "\u2020", "\u2021", "\u00a7", "|", "/", "\\", "+", "*", "=", "#", "0", "1"],
+  zh: ["\u4e28", "\u4e36", "\u4e3f", "\u4e59", "\u53e3", "\u65e5", "\u5c71", "\u5ddd", "\u4e42", "\u5b80", "\u5f61", "\u535c", "\u7384", "\u203b", "\u2020", "\u00a7"],
+};
 
 function readStoredLanguage() {
   try {
@@ -130,6 +141,10 @@ function basePath(path) {
 
 function getArtistName(lang = state.lang) {
   return SITE_DATA.site?.artist?.[lang] || SITE_DATA.site?.artist?.en || "Lu Han";
+}
+
+function getHomeHeroName(lang = state.lang) {
+  return lang === "zh" ? "\u7490\u6c57" : "LUHAN";
 }
 
 function getPublicArtworks() {
@@ -238,23 +253,168 @@ function clearHeroTimer() {
   }
 }
 
+function pickRandomGlyph(lang = state.lang) {
+  const glyphs = HOME_NAME_GLYPHS[lang] || HOME_NAME_GLYPHS.en;
+  return glyphs[Math.floor(Math.random() * glyphs.length)] || "";
+}
+
+function pickSettleGlyph(character, lang) {
+  if (lang === "zh") {
+    const zhVariants = ["\u4e28", "\u5ddd", "\u65e5", "\u4e36", "\u5f61", "\u203b", "\u2020"];
+    return zhVariants[Math.floor(Math.random() * zhVariants.length)] || character;
+  }
+
+  const variants = {
+    L: ["|", "/", "I", "\u2020"],
+    U: ["V", "\u222a", "\u039b", "|"],
+    H: ["#", "|", "I", "\u2021"],
+    A: ["\u039b", "\u2206", "V", "/"],
+    N: ["\u0418", "V", "/", "|"],
+    default: ["|", "/", "\u2020", "\u00a7", "#"],
+  };
+
+  const pool = variants[character] || variants.default;
+  return pool[Math.floor(Math.random() * pool.length)] || character;
+}
+
+function buildHomeNameFrame(target, lang, progress) {
+  const characters = Array.from(target);
+  const revealProgress = progress < 0.68
+    ? (progress / 0.68) * 0.88
+    : 0.88 + ((progress - 0.68) / 0.32) * 0.12;
+  const easedProgress = Math.max(0, Math.min(1, revealProgress));
+  const tailWindow = progress > 0.64 ? Math.min(1, (progress - 0.64) / 0.36) : 0;
+  const tailErrorChanceBase = tailWindow > 0 ? Math.max(0, 0.28 * (1 - Math.pow(tailWindow, 0.82))) : 0;
+
+  return characters
+    .map((character, index) => {
+      const offset = (index / Math.max(characters.length, 1)) * 0.12;
+      const normalized = Math.max(0, Math.min(1, (easedProgress - offset) / 0.8));
+
+      if (normalized >= 0.997 && progress >= 0.995) {
+        return character;
+      }
+
+      if (normalized <= 0.12) {
+        return pickRandomGlyph(lang);
+      }
+
+      const tailErrorChance = normalized > 0.78
+        ? tailErrorChanceBase * (1 - Math.min(1, (normalized - 0.78) / 0.22) * 0.35)
+        : 0;
+
+      if (tailErrorChance > 0 && Math.random() < tailErrorChance && progress < 0.995) {
+        return pickSettleGlyph(character, lang);
+      }
+
+      const revealChance = Math.min(0.97, 0.15 + normalized * 0.85);
+      if (Math.random() < revealChance) {
+        return character;
+      }
+
+      return normalized > 0.58 ? pickSettleGlyph(character, lang) : pickRandomGlyph(lang);
+    })
+    .join("");
+}
+
+function clearHomeNameReveal() {
+  if (state.homeNameStartTimer) {
+    window.clearTimeout(state.homeNameStartTimer);
+    state.homeNameStartTimer = null;
+  }
+  if (state.homeNameFrame) {
+    window.cancelAnimationFrame(state.homeNameFrame);
+    state.homeNameFrame = null;
+  }
+}
+
+function syncHomeHeroTitle(forceFinal = false) {
+  if (document.body.dataset.page !== "home") return;
+
+  const heroArtist = document.querySelector(".hero__artist");
+  if (!heroArtist) return;
+
+  const target = getHomeHeroName();
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  heroArtist.dataset.finalName = target;
+  heroArtist.setAttribute("aria-label", target);
+
+  if (forceFinal || prefersReducedMotion || state.homeIntroPlayed || !document.body.classList.contains("home-intro-active")) {
+    clearHomeNameReveal();
+    state.homeNameTarget = target;
+    heroArtist.textContent = target;
+    heroArtist.dataset.ghost = target;
+    heroArtist.classList.remove("is-queued", "is-decoding", "is-settling");
+    heroArtist.classList.add("is-locked");
+    return;
+  }
+
+  if (state.homeNameTarget === target && (state.homeNameStartTimer || state.homeNameFrame)) {
+    return;
+  }
+
+  clearHomeNameReveal();
+  state.homeNameTarget = target;
+  heroArtist.textContent = target;
+  heroArtist.dataset.ghost = target;
+  heroArtist.classList.remove("is-locked", "is-decoding", "is-settling");
+  heroArtist.classList.add("is-queued");
+
+  const elapsed = state.homeIntroStartedAt ? performance.now() - state.homeIntroStartedAt : 0;
+  const startDelay = Math.max(0, HOME_NAME_REVEAL_DELAY_MS - elapsed);
+
+  state.homeNameStartTimer = window.setTimeout(() => {
+    state.homeNameStartTimer = null;
+    const decodeStartedAt = performance.now();
+    heroArtist.classList.remove("is-queued", "is-locked", "is-settling");
+    heroArtist.classList.add("is-decoding");
+    heroArtist.textContent = buildHomeNameFrame(target, state.lang, 0.04);
+    heroArtist.dataset.ghost = heroArtist.textContent;
+
+    const step = (now) => {
+      const progress = Math.min((now - decodeStartedAt) / HOME_NAME_REVEAL_DURATION_MS, 1);
+      const currentFrame = buildHomeNameFrame(target, state.lang, progress);
+      heroArtist.textContent = currentFrame;
+      heroArtist.dataset.ghost = buildHomeNameFrame(target, state.lang, Math.max(0, progress - 0.14));
+
+      if (progress < 1) {
+        state.homeNameFrame = window.requestAnimationFrame(step);
+        return;
+      }
+
+      heroArtist.textContent = target;
+      heroArtist.dataset.ghost = target;
+      heroArtist.classList.remove("is-queued", "is-decoding", "is-settling");
+      heroArtist.classList.add("is-locked");
+      state.homeNameFrame = null;
+    };
+
+    state.homeNameFrame = window.requestAnimationFrame(step);
+  }, startDelay);
+}
+
 function setupHomeIntro() {
   if (document.body.dataset.page !== "home" || state.homeIntroPlayed || state.homeIntroTimer) return;
 
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     document.body.classList.add("home-intro-complete");
     state.homeIntroPlayed = true;
+    syncHomeHeroTitle(true);
     return;
   }
 
   document.body.classList.remove("home-intro-pending");
   document.body.classList.add("home-intro-active");
+  state.homeIntroStartedAt = performance.now();
+  syncHomeHeroTitle();
   state.homeIntroTimer = window.setTimeout(() => {
     document.body.classList.add("home-intro-complete");
     document.body.classList.remove("home-intro-active");
     document.body.classList.remove("home-intro-pending");
     state.homeIntroPlayed = true;
     state.homeIntroTimer = null;
+    state.homeIntroStartedAt = null;
+    syncHomeHeroTitle(true);
   }, 3600);
 }
 
@@ -313,6 +473,7 @@ function renderHome() {
   };
 
   startHeroTimer();
+  syncHomeHeroTitle();
 }
 
 function createYearCard(year) {
