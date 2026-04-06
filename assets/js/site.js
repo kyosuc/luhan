@@ -103,6 +103,16 @@ const HOME_NAME_GLYPHS = {
   zh: ["\u4e28", "\u4e36", "\u4e3f", "\u4e59", "\u53e3", "\u65e5", "\u5c71", "\u5ddd", "\u4e42", "\u5b80", "\u5f61", "\u535c", "\u7384", "\u203b", "\u2020", "\u00a7"],
 };
 
+
+const HOME_NAME_COLOR_PALETTE = [
+  "#c9b5a8",
+  "#e2ddd1",
+  "#7d89a5",
+  "#875f69",
+  "#9c9488",
+  "#8b7968",
+];
+
 function readStoredLanguage() {
   try {
     return localStorage.getItem(LANGUAGE_KEY) || "en";
@@ -317,6 +327,22 @@ function buildHomeNameFrame(target, lang, progress) {
     .join("");
 }
 
+function getHomeNameCharacterColor(character, index, progress) {
+  const phase = Math.floor(progress * 18);
+  const code = character.codePointAt(0) || 0;
+  const paletteIndex = Math.abs(code + index * 3 + phase) % HOME_NAME_COLOR_PALETTE.length;
+  return HOME_NAME_COLOR_PALETTE[paletteIndex];
+}
+
+function renderHomeNameColoredMarkup(frame, progress) {
+  return Array.from(frame)
+    .map((character, index) => {
+      const color = getHomeNameCharacterColor(character, index, progress);
+      return `<span class="hero__artist-char" style="--hero-char-color:${color}">${escapeHtml(character)}</span>`;
+    })
+    .join("");
+}
+
 function clearHomeNameReveal() {
   if (state.homeNameStartTimer) {
     window.clearTimeout(state.homeNameStartTimer);
@@ -368,13 +394,14 @@ function syncHomeHeroTitle(forceFinal = false) {
     const decodeStartedAt = performance.now();
     heroArtist.classList.remove("is-queued", "is-locked", "is-settling");
     heroArtist.classList.add("is-decoding");
-    heroArtist.textContent = buildHomeNameFrame(target, state.lang, 0.04);
-    heroArtist.dataset.ghost = heroArtist.textContent;
+    const initialFrame = buildHomeNameFrame(target, state.lang, 0.012);
+    heroArtist.innerHTML = renderHomeNameColoredMarkup(initialFrame, 0.012);
+    heroArtist.dataset.ghost = initialFrame;
 
     const step = (now) => {
       const progress = Math.min((now - decodeStartedAt) / HOME_NAME_REVEAL_DURATION_MS, 1);
       const currentFrame = buildHomeNameFrame(target, state.lang, progress);
-      heroArtist.textContent = currentFrame;
+      heroArtist.innerHTML = renderHomeNameColoredMarkup(currentFrame, progress);
       heroArtist.dataset.ghost = buildHomeNameFrame(target, state.lang, Math.max(0, progress - 0.14));
 
       if (progress < 1) {
