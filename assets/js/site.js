@@ -4,6 +4,7 @@ const LANGUAGE_KEY = "luhan-site-language";
 const TEXT = {
   en: {
     "nav.home": "Home",
+    "nav.exhibitions": "Exhibitions",
     "nav.works": "Works",
     "nav.about": "About",
     "nav.contact": "Contact",
@@ -39,9 +40,17 @@ const TEXT = {
     "contact.open": "Open",
     "contact.placeholderNote": "Replaceable link.",
     "contact.instagramNote": "Instagram",
+    "exhibitions.title": "Exhibitions",
+    "exhibitions.lead": "Current, upcoming, and selected presentations.",
+    "exhibitions.currentTitle": "Current & Upcoming",
+    "exhibitions.currentCopy": "Current exhibitions, art fairs, and new presentations can be added here as they are confirmed.",
+    "exhibitions.archiveTitle": "Selected History",
+    "exhibitions.archiveCopy": "This page is prepared for solo exhibitions, group exhibitions, and fair presentations without changing the site structure later.",
+    "exhibitions.note": "Exhibition details can be updated whenever dates, venues, and cities are finalized.",
   },
   zh: {
     "nav.home": "首页",
+    "nav.exhibitions": "\u5c55\u89c8",
     "nav.works": "作品",
     "nav.about": "关于",
     "nav.contact": "联系",
@@ -77,6 +86,13 @@ const TEXT = {
     "contact.open": "打开",
     "contact.placeholderNote": "当前为可替换链接。",
     "contact.instagramNote": "Instagram",
+    "exhibitions.title": "展览",
+    "exhibitions.lead": "当前、即将举行与精选展览。",
+    "exhibitions.currentTitle": "当前与即将举行",
+    "exhibitions.currentCopy": "这里可以放你正在进行中的展览、艺博会，以及即将公布的新项目。",
+    "exhibitions.archiveTitle": "精选经历",
+    "exhibitions.archiveCopy": "这个页面已经预留好单个展览、群展和艺博会的结构，之后直接补内容就可以。",
+    "exhibitions.note": "当展期、地点和城市确认后，可以随时补进来，不需要再改网站结构。",
   },
 };
 
@@ -92,6 +108,8 @@ const state = {
   homeNameStartTimer: null,
   homeNameFrame: null,
   homeNameTarget: null,
+  exhibitionMediaIndex: 0,
+  exhibitionMediaTimer: null,
 };
 
 let revealObserver = null;
@@ -112,6 +130,115 @@ const HOME_NAME_COLOR_PALETTE = [
   "#9c9488",
   "#8b7968",
 ];
+
+const EXHIBITION_RECORD = {
+  "kicker": {
+    "en": "Art Fair / Exhibition Record",
+    "zh": "\u827a\u535a\u4f1a / \u5c55\u89c8\u8bb0\u5f55"
+  },
+  "title": {
+    "en": "2026 Chengdu ART021 SPIN",
+    "zh": "2026 \u6210\u90fd ART021 \u9f99\u95e8\u9635"
+  },
+  "lead": {
+    "en": "Five new paintings at 2026 Chengdu ART021 SPIN.",
+    "zh": "5 \u5f20\u65b0\u4f5c\u53c2\u52a0 2026 \u6210\u90fd ART021 \u9f99\u95e8\u9635\u3002"
+  },
+  "details": [
+    {
+      "label": {
+        "en": "Booth",
+        "zh": "\u5c55\u4f4d"
+      },
+      "value": {
+        "en": "GF-08",
+        "zh": "GF-08"
+      }
+    },
+    {
+      "label": {
+        "en": "Partner Gallery",
+        "zh": "\u5408\u4f5c\u753b\u5eca"
+      },
+      "value": {
+        "en": "Line Gallery",
+        "zh": "\u7389\u5170\u5802 Line Gallery"
+      }
+    },
+    {
+      "label": {
+        "en": "Venue",
+        "zh": "\u5730\u70b9"
+      },
+      "value": {
+        "en": "Luxetown Mountaintop Plaza, Chengdu",
+        "zh": "\u6210\u90fd\u9e93\u9547\u5c71\u9876\u5e7f\u573a"
+      }
+    }
+  ],
+  "scheduleTitle": {
+    "en": "",
+    "zh": ""
+  },
+  "schedule": [
+    {
+      "label": {
+        "en": "VIP Preview",
+        "zh": "\u8d35\u5bbe\u9884\u89c8"
+      },
+      "date": {
+        "en": "April 9-10, 2026",
+        "zh": "2026 \u5e74 4 \u6708 9 \u65e5\u81f3 10 \u65e5"
+      },
+      "time": "13:00 - 19:00 / 11:00 - 19:00"
+    },
+    {
+      "label": {
+        "en": "Public Days",
+        "zh": "\u516c\u4f17\u5f00\u653e"
+      },
+      "date": {
+        "en": "April 11-12, 2026",
+        "zh": "2026 \u5e74 4 \u6708 11 \u65e5\u81f3 12 \u65e5"
+      },
+      "time": "11:00 - 18:00"
+    },
+    {
+      "label": {
+        "en": "Venue Address",
+        "zh": "\u5c55\u4f1a\u5730\u5740"
+      },
+      "date": {
+        "en": "Building 21, Luxetown Mountaintop Plaza",
+        "zh": "\u6210\u90fd\u9e93\u9547\u5c71\u9876\u5e7f\u573a 21 \u680b"
+      },
+      "time": ""
+    }
+  ],
+  "images": [
+    {
+      "src": "assets/generated/exhibitions/chengdu-art021-spin-2026/booth-poster.jpg",
+      "alt": {
+        "en": "Booth poster for Lu Han at ART021 SPIN Chengdu 2026",
+        "zh": "\u7490\u6c57\u53c2\u52a0 2026 \u6210\u90fd ART021 \u9f99\u95e8\u9635\u7684\u5c55\u4f4d\u6d77\u62a5"
+      }
+    },
+    {
+      "src": "assets/generated/exhibitions/chengdu-art021-spin-2026/gallery-list.jpg",
+      "alt": {
+        "en": "Gallery list poster for ART021 SPIN Chengdu 2026",
+        "zh": "2026 \u6210\u90fd ART021 \u9f99\u95e8\u9635\u53c2\u5c55\u753b\u5eca\u540d\u5355\u6d77\u62a5"
+      }
+    },
+    {
+      "src": "assets/generated/exhibitions/chengdu-art021-spin-2026/schedule-poster.jpg",
+      "alt": {
+        "en": "Schedule poster for ART021 SPIN Chengdu 2026",
+        "zh": "2026 \u6210\u90fd ART021 \u9f99\u95e8\u9635\u65f6\u95f4\u6d77\u62a5"
+      }
+    }
+  ]
+};
 
 function readStoredLanguage() {
   try {
@@ -260,6 +387,13 @@ function clearHeroTimer() {
   if (state.heroTimer) {
     window.clearInterval(state.heroTimer);
     state.heroTimer = null;
+  }
+}
+
+function clearExhibitionMediaTimer() {
+  if (state.exhibitionMediaTimer) {
+    window.clearInterval(state.exhibitionMediaTimer);
+    state.exhibitionMediaTimer = null;
   }
 }
 
@@ -752,6 +886,133 @@ function renderAboutPage() {
   renderAboutContactSection();
 }
 
+
+
+function getExhibitionValue(value) {
+  if (typeof value === "string") return value;
+  return value?.[state.lang] || value?.en || "";
+}
+
+function setActiveExhibitionMedia(index) {
+  document.querySelectorAll("[data-exhibition-media-slide]").forEach((slide, slideIndex) => {
+    slide.classList.toggle("is-active", slideIndex === index);
+    slide.setAttribute("aria-hidden", String(slideIndex !== index));
+  });
+
+  document.querySelectorAll("[data-exhibition-media-index]").forEach((button) => {
+    const isActive = Number(button.dataset.exhibitionMediaIndex) === index;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  });
+}
+
+function renderExhibitionsPage() {
+  clearExhibitionMediaTimer();
+  if (document.body.dataset.page !== "exhibitions") return;
+
+  const kicker = document.getElementById("exhibition-kicker");
+  const title = document.getElementById("exhibition-title");
+  const lead = document.getElementById("exhibition-lead");
+  const meta = document.getElementById("exhibition-meta");
+  const scheduleTitle = document.getElementById("exhibition-schedule-title");
+  const schedule = document.getElementById("exhibition-schedule");
+  const mediaStage = document.getElementById("exhibition-media-stage");
+  const mediaControls = document.getElementById("exhibition-media-controls");
+  const images = EXHIBITION_RECORD.images || [];
+
+  if (kicker) {
+    kicker.textContent = "";
+    kicker.hidden = true;
+  }
+  if (title) title.textContent = getExhibitionValue(EXHIBITION_RECORD.title);
+  if (lead) lead.textContent = getExhibitionValue(EXHIBITION_RECORD.lead);
+
+  if (meta) {
+    meta.innerHTML = EXHIBITION_RECORD.details.map((item) => `
+      <div class="exhibition-info-row">
+        <span class="exhibition-info-row__label">${escapeHtml(getExhibitionValue(item.label))}</span>
+        <p class="exhibition-info-row__value">${escapeHtml(getExhibitionValue(item.value))}</p>
+      </div>
+    `).join("");
+  }
+
+  if (scheduleTitle) {
+    const scheduleTitleValue = getExhibitionValue(EXHIBITION_RECORD.scheduleTitle);
+    scheduleTitle.textContent = scheduleTitleValue;
+    scheduleTitle.hidden = !scheduleTitleValue;
+  }
+  if (schedule) {
+    schedule.innerHTML = EXHIBITION_RECORD.schedule.map((item) => `
+      <div class="exhibition-schedule-row">
+        <span class="exhibition-schedule-row__label">${escapeHtml(getExhibitionValue(item.label))}</span>
+        <div class="exhibition-schedule-row__body">
+          <span class="exhibition-schedule-row__date">${escapeHtml(getExhibitionValue(item.date))}</span>
+          ${item.time ? `<span class="exhibition-schedule-row__time">${escapeHtml(item.time)}</span>` : ""}
+        </div>
+      </div>
+    `).join("");
+  }
+
+  state.exhibitionMediaIndex = Number.isFinite(state.exhibitionMediaIndex)
+    ? state.exhibitionMediaIndex % Math.max(images.length, 1)
+    : 0;
+
+  if (mediaStage) {
+    mediaStage.innerHTML = images.map((image, index) => {
+      const loading = index === 0 ? "eager" : "lazy";
+      const fetchPriority = index === 0 ? "high" : "auto";
+      return `
+        <figure class="exhibition-media-frame${index === state.exhibitionMediaIndex ? " is-active" : ""}" data-exhibition-media-slide aria-hidden="${index === state.exhibitionMediaIndex ? "false" : "true"}">
+          <img src="${encodeURI(basePath(image.src))}" alt="${escapeHtml(getExhibitionValue(image.alt))}" loading="${loading}" fetchpriority="${fetchPriority}">
+        </figure>
+      `;
+    }).join("");
+  }
+
+  if (mediaControls) {
+    mediaControls.innerHTML = images.map((image, index) => `
+      <button class="exhibition-media-toggle${index === state.exhibitionMediaIndex ? " is-active" : ""}" type="button" data-exhibition-media-index="${index}" aria-pressed="${index === state.exhibitionMediaIndex ? "true" : "false"}" aria-label="${escapeHtml(getExhibitionValue(image.alt))}">
+        <span class="exhibition-media-toggle__dot" aria-hidden="true"></span>
+      </button>
+    `).join("");
+  }
+
+  const advanceMedia = () => {
+    if (images.length < 2) return;
+    state.exhibitionMediaIndex = (state.exhibitionMediaIndex + 1) % images.length;
+    setActiveExhibitionMedia(state.exhibitionMediaIndex);
+  };
+
+  const startMediaTimer = () => {
+    clearExhibitionMediaTimer();
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || images.length < 2) {
+      return;
+    }
+    state.exhibitionMediaTimer = window.setInterval(() => {
+      advanceMedia();
+    }, 5200);
+  };
+
+  if (mediaStage) {
+    mediaStage.onclick = () => {
+      advanceMedia();
+      startMediaTimer();
+    };
+  }
+
+  document.querySelectorAll("[data-exhibition-media-index]").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.exhibitionMediaIndex = Number(button.dataset.exhibitionMediaIndex);
+      setActiveExhibitionMedia(state.exhibitionMediaIndex);
+      startMediaTimer();
+    });
+  });
+
+  setActiveExhibitionMedia(state.exhibitionMediaIndex);
+  startMediaTimer();
+}
+
+
 function renderContactPage() {
   if (document.body.dataset.page !== "contact") return;
 
@@ -921,6 +1182,7 @@ function renderPage() {
   renderBrandAssets();
   renderHome();
   renderWorksLanding();
+  renderExhibitionsPage();
   renderArchivePage();
   renderScalePage();
   renderAboutPage();

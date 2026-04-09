@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exhibitions / Lu Han</title>
+    <meta name="description" content="Exhibitions, fairs, and presentations for Lu Han.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <script src="./assets/js/site-data.js" defer></script>
+    <script src="./assets/js/site.js" defer></script>
+  </head>
+  <body data-page="exhibitions" data-base=".">
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="./index.html" aria-label="Lu Han home">
+          <span class="brand__crest" aria-hidden="true"></span>
+          <span class="brand__meta">
+            <strong class="brand__name" data-artist-name>Lu Han</strong>
+          </span>
+        </a>
+        <div class="site-nav">
+          <nav class="site-nav__links" aria-label="Primary">
+            <a href="./exhibitions.html" aria-current="page" data-i18n="nav.exhibitions">Exhibitions</a>
+            <a href="./works/index.html" data-i18n="nav.works">Works</a>
+            <a href="./about.html" data-i18n="nav.aboutContact">About&Contact</a>
+          </nav>
+          <div class="language-toggle" aria-label="Language switcher">
+            <button class="language-toggle__button" type="button" data-lang-button="en">EN</button>
+            <button class="language-toggle__button" type="button" data-lang-button="zh">&#20013;&#25991;</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main page-shell">
+      <section class="site-shell site-shell--wide">
+        <section class="content-panel reveal exhibition-panel">
+          <div class="exhibition-panel__media-block">
+            <div class="exhibition-media-stage" id="exhibition-media-stage" aria-live="polite"></div>
+            <div class="exhibition-media-controls exhibition-media-controls--dots" id="exhibition-media-controls"></div>
+          </div>
+
+          <div class="exhibition-copy-panel">
+            <p class="exhibition-kicker" id="exhibition-kicker"></p>
+            <h1 class="exhibition-title" id="exhibition-title"></h1>
+            <p class="about-copy exhibition-lead" id="exhibition-lead"></p>
+            <div class="exhibition-info-list" id="exhibition-meta"></div>
+            <div class="exhibition-divider" aria-hidden="true"></div>
+            <h2 class="about-subtitle exhibition-section-title" id="exhibition-schedule-title"></h2>
+            <div class="exhibition-schedule-list" id="exhibition-schedule"></div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <span><span data-artist-name>Lu Han</span> / <span data-current-year></span></span>
+        <div class="site-footer__links">
+          <span>LUHAN All rights reserved.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
