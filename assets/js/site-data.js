@@ -12,7 +12,7 @@ window.LUHAN_SITE_DATA = {
     ],
     "yearCounts": {
       "2026": 11,
-      "2025": 37,
+      "2025": 38,
       "2024": 10,
       "2023": 6
     },
@@ -58,6 +58,10 @@ window.LUHAN_SITE_DATA = {
         "count": 1
       },
       {
+        "size": "80 x 70 cm",
+        "count": 1
+      },
+      {
         "size": "72 x 50 cm",
         "count": 1
       },
@@ -81,7 +85,7 @@ window.LUHAN_SITE_DATA = {
         "year": 2025,
         "title_en": "Angle of Incidence 17°",
         "title_zh": "入射角17°",
-        "image": "assets/generated/hero/slide-01-86e67b15ca.jpg"
+        "image": "assets/generated/hero/slide-01-9c29287fb5.jpg"
       },
       {
         "id": "hero-02",
@@ -89,7 +93,7 @@ window.LUHAN_SITE_DATA = {
         "year": 2026,
         "title_en": "You Dropped a Pearl",
         "title_zh": "你的珍珠掉了",
-        "image": "assets/generated/hero/slide-02-0967d12ce9.jpg"
+        "image": "assets/generated/hero/slide-02-7b73456d90.jpg"
       },
       {
         "id": "hero-03",
@@ -97,7 +101,7 @@ window.LUHAN_SITE_DATA = {
         "year": 2025,
         "title_en": "In Your Unknowing",
         "title_zh": "在你不知处",
-        "image": "assets/generated/hero/slide-03-5d9d7cb501.jpg"
+        "image": "assets/generated/hero/slide-03-e6261a2a07.jpg"
       },
       {
         "id": "hero-04",
@@ -595,6 +599,25 @@ window.LUHAN_SITE_DATA = {
       "image_thumb": "assets/generated/works/thumb/suspension-of-existence-2025.jpg"
     },
     {
+      "id": "oh-sister-2025",
+      "slug": "oh-sister-2025",
+      "year": 2025,
+      "title_en": "Oh, Sister!",
+      "title_zh": "哦！姐姐",
+      "medium_en": "Oil on Canvas",
+      "medium_zh": "Oil on Canvas",
+      "size": "80 x 70 cm",
+      "size_bucket": "80 x 70 cm",
+      "series_slot": "series-b",
+      "orientation": "landscape",
+      "duplicate_index": 1,
+      "public": true,
+      "source_path": "作品_整理后/2025/哦！姐姐 Oh, Sister! 2025 Oil on Canvas 80 x 70 cm.jpg",
+      "sort_order": 8,
+      "image_web": "assets/generated/works/web/oh-sister-2025.jpg",
+      "image_thumb": "assets/generated/works/thumb/oh-sister-2025.jpg"
+    },
+    {
       "id": "crimson-balance-2025",
       "slug": "crimson-balance-2025",
       "year": 2025,
@@ -609,7 +632,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2025/赤色平衡 Crimson Balance 2025 Oil on Wood 72 x 50 cm.jpg",
-      "sort_order": 8,
+      "sort_order": 9,
       "image_web": "assets/generated/works/web/crimson-balance-2025.jpg",
       "image_thumb": "assets/generated/works/thumb/crimson-balance-2025.jpg"
     },
@@ -628,7 +651,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2025/沉默的盛装 Silent Regalia 2025 Oil on Wood 70 x 50 cm.jpg",
-      "sort_order": 9,
+      "sort_order": 10,
       "image_web": "assets/generated/works/web/silent-regalia-2025.jpg",
       "image_thumb": "assets/generated/works/thumb/silent-regalia-2025.jpg"
     },
@@ -647,7 +670,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2025/昨日不记凉夜 Of the Night Unrecalled 2025 Mixed Media on Canvas 60 x 50 cm.jpg",
-      "sort_order": 10,
+      "sort_order": 11,
       "image_web": "assets/generated/works/web/of-the-night-unrecalled-2025.jpg",
       "image_thumb": "assets/generated/works/thumb/of-the-night-unrecalled-2025.jpg"
     },
@@ -666,7 +689,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2025/曲经幽辰 A Winding Path into the Hidden Hour 2025 Oil on Wood 40 x 40 cm.jpg",
-      "sort_order": 11,
+      "sort_order": 12,
       "image_web": "assets/generated/works/web/a-winding-path-into-the-hidden-hour-2025.jpg",
       "image_thumb": "assets/generated/works/thumb/a-winding-path-into-the-hidden-hour-2025.jpg"
     },
@@ -685,7 +708,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2025/后焰 Afterglow 2025 Oil on Wood 40 x 40 cm.jpg",
-      "sort_order": 12,
+      "sort_order": 13,
       "image_web": "assets/generated/works/web/afterglow-2025.jpg",
       "image_thumb": "assets/generated/works/thumb/afterglow-2025.jpg"
     },
@@ -704,7 +727,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2025/入射角17° Angle of Incidence 17° 2025 Mixed Media on Wood 40 x 40 cm.jpg",
-      "sort_order": 13,
+      "sort_order": 14,
       "image_web": "assets/generated/works/web/angle-of-incidence-17-2025.jpg",
       "image_thumb": "assets/generated/works/thumb/angle-of-incidence-17-2025.jpg"
     },
@@ -723,7 +746,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2025/蓝色福祉 Blue Benediction 2025 Mixed Media on Wood 40 x 40 cm.jpg",
-      "sort_order": 14,
+      "sort_order": 15,
       "image_web": "assets/generated/works/web/blue-benediction-2025.jpg",
       "image_thumb": "assets/generated/works/thumb/blue-benediction-2025.jpg"
     },
@@ -742,7 +765,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2025/石墨碳化·赫淮斯托斯 Carbonized Graphite Hephaestus 2025 Mixed Media on Wood 40 x 40 cm.jpg",
-      "sort_order": 15,
+      "sort_order": 16,
       "image_web": "assets/generated/works/web/carbonized-graphite-hephaestus-2025.jpg",
       "image_thumb": "assets/generated/works/thumb/carbonized-graphite-hephaestus-2025.jpg"
     },
@@ -761,7 +784,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2025/风中的清凉 Coolness in the Wind 2025 Oil on Wood 40 x 40 cm.jpg",
-      "sort_order": 16,
+      "sort_order": 17,
       "image_web": "assets/generated/works/web/coolness-in-the-wind-2025.jpg",
       "image_thumb": "assets/generated/works/thumb/coolness-in-the-wind-2025.jpg"
     },
@@ -780,7 +803,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2025/胭脂泪 Crimson Tears 2025 Oil on Wood 40 x 40 cm.jpg",
-      "sort_order": 17,
+      "sort_order": 18,
       "image_web": "assets/generated/works/web/crimson-tears-2025.jpg",
       "image_thumb": "assets/generated/works/thumb/crimson-tears-2025.jpg"
     },
@@ -799,7 +822,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2025/延迟的浪漫 Delayed Romance 2025 Oil on Wood 40 x 40 cm.jpg",
-      "sort_order": 18,
+      "sort_order": 19,
       "image_web": "assets/generated/works/web/delayed-romance-2025.jpg",
       "image_thumb": "assets/generated/works/thumb/delayed-romance-2025.jpg"
     },
@@ -818,7 +841,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2025/晚风 Evening Breeze 2025 Oil on Wood 40 x 40 cm.jpg",
-      "sort_order": 19,
+      "sort_order": 20,
       "image_web": "assets/generated/works/web/evening-breeze-2025.jpg",
       "image_thumb": "assets/generated/works/thumb/evening-breeze-2025.jpg"
     },
@@ -837,7 +860,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2025/你要的脸都给你 Every Face You Ever Wanted 2025 Mixed Media on Wood 40 x 40 cm.jpg",
-      "sort_order": 20,
+      "sort_order": 21,
       "image_web": "assets/generated/works/web/every-face-you-ever-wanted-2025.jpg",
       "image_thumb": "assets/generated/works/thumb/every-face-you-ever-wanted-2025.jpg"
     },
@@ -856,7 +879,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2025/炽色回声 Fervent Echo 2025 Mixed Media on Wood 40 x 40 cm.jpg",
-      "sort_order": 21,
+      "sort_order": 22,
       "image_web": "assets/generated/works/web/fervent-echo-2025.jpg",
       "image_thumb": "assets/generated/works/thumb/fervent-echo-2025.jpg"
     },
@@ -875,7 +898,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2025/宝石如何记得自己 How Does a Gem Remember Itself 2025 Oil on Wood 40 x 40 cm.jpg",
-      "sort_order": 22,
+      "sort_order": 23,
       "image_web": "assets/generated/works/web/how-does-a-gem-remember-itself-2025.jpg",
       "image_thumb": "assets/generated/works/thumb/how-does-a-gem-remember-itself-2025.jpg"
     },
@@ -894,7 +917,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2025/在你不知处 In Your Unknowing 2025 Oil on Wood 40 x 40 cm.jpg",
-      "sort_order": 23,
+      "sort_order": 24,
       "image_web": "assets/generated/works/web/in-your-unknowing-2025.jpg",
       "image_thumb": "assets/generated/works/thumb/in-your-unknowing-2025.jpg"
     },
@@ -913,7 +936,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2025/宠溺 Indulgence 2025 Oil on Wood 40 x 40 cm.jpg",
-      "sort_order": 24,
+      "sort_order": 25,
       "image_web": "assets/generated/works/web/indulgence-2025.jpg",
       "image_thumb": "assets/generated/works/thumb/indulgence-2025.jpg"
     },
@@ -932,7 +955,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2025/擦肩而过 Passing Myself By 2025 Oil on Wood 40 x 40 cm.jpg",
-      "sort_order": 25,
+      "sort_order": 26,
       "image_web": "assets/generated/works/web/passing-myself-by-2025.jpg",
       "image_thumb": "assets/generated/works/thumb/passing-myself-by-2025.jpg"
     },
@@ -951,7 +974,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2025/指尖的沙 Sand at My Fingertips 2025 Oil on Wood 40 x 40 cm.jpg",
-      "sort_order": 26,
+      "sort_order": 27,
       "image_web": "assets/generated/works/web/sand-at-my-fingertips-2025.jpg",
       "image_thumb": "assets/generated/works/thumb/sand-at-my-fingertips-2025.jpg"
     },
@@ -970,7 +993,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2025/星痕 Stellar Trace 2025 Oil on Wood 40 x 40 cm.jpg",
-      "sort_order": 27,
+      "sort_order": 28,
       "image_web": "assets/generated/works/web/stellar-trace-2025.jpg",
       "image_thumb": "assets/generated/works/thumb/stellar-trace-2025.jpg"
     },
@@ -989,7 +1012,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2025/回忆的灯盏 The Lamp of Memory 2025 Oil on Wood 40 x 40 cm.jpg",
-      "sort_order": 28,
+      "sort_order": 29,
       "image_web": "assets/generated/works/web/the-lamp-of-memory-2025.jpg",
       "image_thumb": "assets/generated/works/thumb/the-lamp-of-memory-2025.jpg"
     },
@@ -1008,7 +1031,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2025/最后一口 The Last Puff 2025 Mixed Media on Wood 40 x 40 cm.jpg",
-      "sort_order": 29,
+      "sort_order": 30,
       "image_web": "assets/generated/works/web/the-last-puff-2025.jpg",
       "image_thumb": "assets/generated/works/thumb/the-last-puff-2025.jpg"
     },
@@ -1027,7 +1050,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2025/镜与脉 The Mirror and the Pulse 2025 Oil on Wood 40 x 40 cm.jpg",
-      "sort_order": 30,
+      "sort_order": 31,
       "image_web": "assets/generated/works/web/the-mirror-and-the-pulse-2025.jpg",
       "image_thumb": "assets/generated/works/thumb/the-mirror-and-the-pulse-2025.jpg"
     },
@@ -1046,7 +1069,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2025/热信号 Thermal Signal 2025 Oil on Wood 40 x 40 cm.jpg",
-      "sort_order": 31,
+      "sort_order": 32,
       "image_web": "assets/generated/works/web/thermal-signal-2025.jpg",
       "image_thumb": "assets/generated/works/thumb/thermal-signal-2025.jpg"
     },
@@ -1065,7 +1088,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2025/谁把你的泪养成了海 Who Nurtured Your Tears into the Sea 2025 Mixed Media on Wood 40 x 40 cm.jpg",
-      "sort_order": 32,
+      "sort_order": 33,
       "image_web": "assets/generated/works/web/who-nurtured-your-tears-into-the-sea-2025.jpg",
       "image_thumb": "assets/generated/works/thumb/who-nurtured-your-tears-into-the-sea-2025.jpg"
     },
@@ -1084,7 +1107,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2025/为什么蝴蝶没有粉色的？ Why Butterflies Aren't Pink 2025 Oil on Wood 40 x 40 cm.jpg",
-      "sort_order": 33,
+      "sort_order": 34,
       "image_web": "assets/generated/works/web/why-butterflies-aren-t-pink-2025.jpg",
       "image_thumb": "assets/generated/works/thumb/why-butterflies-aren-t-pink-2025.jpg"
     },
@@ -1103,7 +1126,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2025/你的影子挡住了我 Your Shadow Obscured Me 2025 Oil on Wood 40 x 40 cm.jpg",
-      "sort_order": 34,
+      "sort_order": 35,
       "image_web": "assets/generated/works/web/your-shadow-obscured-me-2025.jpg",
       "image_thumb": "assets/generated/works/thumb/your-shadow-obscured-me-2025.jpg"
     },
@@ -1122,7 +1145,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2025/踊 Metamorphic Danse 2025 Oil on Wood 30 x 30 cm.jpg",
-      "sort_order": 35,
+      "sort_order": 36,
       "image_web": "assets/generated/works/web/metamorphic-danse-2025.jpg",
       "image_thumb": "assets/generated/works/thumb/metamorphic-danse-2025.jpg"
     },
@@ -1141,7 +1164,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2025/新娘 Bride 2025 Mixed Media on Wood 29.5 x 29.5 cm.png",
-      "sort_order": 36,
+      "sort_order": 37,
       "image_web": "assets/generated/works/web/bride-2025.jpg",
       "image_thumb": "assets/generated/works/thumb/bride-2025.jpg"
     },
@@ -1160,7 +1183,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2025/回岸石 Shorebound Stone 2025 Mixed Media on Wood 20 x 30 cm.jpg",
-      "sort_order": 37,
+      "sort_order": 38,
       "image_web": "assets/generated/works/web/shorebound-stone-2025.jpg",
       "image_thumb": "assets/generated/works/thumb/shorebound-stone-2025.jpg"
     },

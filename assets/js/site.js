@@ -180,6 +180,11 @@ const EXHIBITION_RECORDS = [
         src: "assets/generated/exhibitions/beijing-dangdai-2026/3.jpg",
         alt: { en: "Beijing Dangdai Art Fair 2026 supporting visual 3", zh: "2026 \u5317\u4eac\u5f53\u4ee3\u827a\u535a\u4f1a\u8865\u5145\u89c6\u89c9 3" },
         ratio: "4614 / 6463"
+      },
+      {
+        src: "assets/generated/exhibitions/beijing-dangdai-2026/4.jpg",
+        alt: { en: "Beijing Dangdai Art Fair 2026 supporting visual 4", zh: "2026 \u5317\u4eac\u5f53\u4ee3\u827a\u535a\u4f1a\u8865\u5145\u89c6\u89c9 4" },
+        ratio: "2522 / 3526"
       }
     ]
   },
