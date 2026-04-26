@@ -108,8 +108,8 @@ const state = {
   homeNameStartTimer: null,
   homeNameFrame: null,
   homeNameTarget: null,
-  exhibitionMediaIndex: 0,
-  exhibitionMediaTimer: null,
+  exhibitionMediaIndices: {},
+  exhibitionMediaTimers: {},
 };
 
 let revealObserver = null;
@@ -131,114 +131,115 @@ const HOME_NAME_COLOR_PALETTE = [
   "#8b7968",
 ];
 
-const EXHIBITION_RECORD = {
-  "kicker": {
-    "en": "Art Fair / Exhibition Record",
-    "zh": "\u827a\u535a\u4f1a / \u5c55\u89c8\u8bb0\u5f55"
+const EXHIBITION_RECORDS = [
+  {
+    id: "beijing-dangdai-2026",
+    preserveImageRatio: true,
+    title: {
+      en: "2026 Beijing Dangdai",
+      zh: "2026 \u5317\u4eac\u5f53\u4ee3"
+    },
+    lead: {
+      en: "Three paintings at 2026 Beijing Dangdai Art Fair.",
+      zh: "3 \u5f20\u4f5c\u54c1\u53c2\u52a0 2026 \u5317\u4eac\u5f53\u4ee3\u827a\u535a\u4f1a\u3002"
+    },
+    details: [
+      {
+        label: { en: "Theme", zh: "\u4e3b\u9898" },
+        value: { en: "LAND TRACE", zh: "\u9646\u8ff9" }
+      },
+      {
+        label: { en: "Venue", zh: "\u5730\u70b9" },
+        value: { en: "Hall 11, National Agricultural Exhibition Center, Beijing", zh: "\u5317\u4eac\u5168\u56fd\u519c\u4e1a\u5c55\u89c8\u9986 11 \u53f7\u9986" }
+      }
+    ],
+    schedule: [
+      {
+        label: { en: "VIP Preview", zh: "\u8d35\u5bbe\u9884\u89c8" },
+        date: { en: "May 21-22, 2026", zh: "2026 \u5e74 5 \u6708 21 \u65e5\u81f3 22 \u65e5" },
+        time: "13:00 - 19:00 / 11:00 - 18:00"
+      },
+      {
+        label: { en: "Public Days", zh: "\u516c\u4f17\u5f00\u653e" },
+        date: { en: "May 23-24, 2026", zh: "2026 \u5e74 5 \u6708 23 \u65e5\u81f3 24 \u65e5" },
+        time: "11:00 - 18:00"
+      }
+    ],
+    images: [
+      {
+        src: "assets/generated/exhibitions/beijing-dangdai-2026/land-trace-key-visual.png",
+        alt: { en: "Official key visual for Beijing Dangdai Art Fair 2026", zh: "2026 \u5317\u4eac\u5f53\u4ee3\u827a\u535a\u4f1a\u201c\u9646\u8ff9\u201d\u5b98\u65b9\u4e3b\u89c6\u89c9" },
+        ratio: "1024 / 723"
+      },
+      {
+        src: "assets/generated/exhibitions/beijing-dangdai-2026/2.jpg",
+        alt: { en: "Beijing Dangdai Art Fair 2026 supporting visual 2", zh: "2026 \u5317\u4eac\u5f53\u4ee3\u827a\u535a\u4f1a\u8865\u5145\u89c6\u89c9 2" },
+        ratio: "2574 / 3264"
+      },
+      {
+        src: "assets/generated/exhibitions/beijing-dangdai-2026/3.jpg",
+        alt: { en: "Beijing Dangdai Art Fair 2026 supporting visual 3", zh: "2026 \u5317\u4eac\u5f53\u4ee3\u827a\u535a\u4f1a\u8865\u5145\u89c6\u89c9 3" },
+        ratio: "4614 / 6463"
+      }
+    ]
   },
-  "title": {
-    "en": "2026 Chengdu ART021 SPIN",
-    "zh": "2026 \u6210\u90fd ART021 \u9f99\u95e8\u9635"
-  },
-  "lead": {
-    "en": "Five new paintings at 2026 Chengdu ART021 SPIN.",
-    "zh": "5 \u5f20\u65b0\u4f5c\u53c2\u52a0 2026 \u6210\u90fd ART021 \u9f99\u95e8\u9635\u3002"
-  },
-  "details": [
-    {
-      "label": {
-        "en": "Booth",
-        "zh": "\u5c55\u4f4d"
-      },
-      "value": {
-        "en": "GF-08",
-        "zh": "GF-08"
-      }
+  {
+    id: "chengdu-art021-spin-2026",
+    title: {
+      en: "2026 Chengdu ART021 SPIN",
+      zh: "2026 \u6210\u90fd ART021 \u9f99\u95e8\u9635"
     },
-    {
-      "label": {
-        "en": "Partner Gallery",
-        "zh": "\u5408\u4f5c\u753b\u5eca"
-      },
-      "value": {
-        "en": "Line Gallery",
-        "zh": "\u7389\u5170\u5802 Line Gallery"
-      }
+    lead: {
+      en: "Five new paintings at 2026 Chengdu ART021 SPIN.",
+      zh: "5 \u5f20\u65b0\u4f5c\u53c2\u52a0 2026 \u6210\u90fd ART021 \u9f99\u95e8\u9635\u3002"
     },
-    {
-      "label": {
-        "en": "Venue",
-        "zh": "\u5730\u70b9"
+    details: [
+      {
+        label: { en: "Booth", zh: "\u5c55\u4f4d" },
+        value: { en: "GF-08", zh: "GF-08" }
       },
-      "value": {
-        "en": "Luxetown Mountaintop Plaza, Chengdu",
-        "zh": "\u6210\u90fd\u9e93\u9547\u5c71\u9876\u5e7f\u573a"
+      {
+        label: { en: "Partner Gallery", zh: "\u5408\u4f5c\u753b\u5eca" },
+        value: { en: "Line Gallery", zh: "\u7389\u5170\u5802 Line Gallery" }
+      },
+      {
+        label: { en: "Venue", zh: "\u5730\u70b9" },
+        value: { en: "Luxetown Mountaintop Plaza, Chengdu", zh: "\u6210\u90fd\u9e93\u9547\u5c71\u9876\u5e7f\u573a" }
       }
-    }
-  ],
-  "scheduleTitle": {
-    "en": "",
-    "zh": ""
-  },
-  "schedule": [
-    {
-      "label": {
-        "en": "VIP Preview",
-        "zh": "\u8d35\u5bbe\u9884\u89c8"
+    ],
+    schedule: [
+      {
+        label: { en: "VIP Preview", zh: "\u8d35\u5bbe\u9884\u89c8" },
+        date: { en: "April 9-10, 2026", zh: "2026 \u5e74 4 \u6708 9 \u65e5\u81f3 10 \u65e5" },
+        time: "13:00 - 19:00 / 11:00 - 19:00"
       },
-      "date": {
-        "en": "April 9-10, 2026",
-        "zh": "2026 \u5e74 4 \u6708 9 \u65e5\u81f3 10 \u65e5"
+      {
+        label: { en: "Public Days", zh: "\u516c\u4f17\u5f00\u653e" },
+        date: { en: "April 11-12, 2026", zh: "2026 \u5e74 4 \u6708 11 \u65e5\u81f3 12 \u65e5" },
+        time: "11:00 - 18:00"
       },
-      "time": "13:00 - 19:00 / 11:00 - 19:00"
-    },
-    {
-      "label": {
-        "en": "Public Days",
-        "zh": "\u516c\u4f17\u5f00\u653e"
-      },
-      "date": {
-        "en": "April 11-12, 2026",
-        "zh": "2026 \u5e74 4 \u6708 11 \u65e5\u81f3 12 \u65e5"
-      },
-      "time": "11:00 - 18:00"
-    },
-    {
-      "label": {
-        "en": "Venue Address",
-        "zh": "\u5c55\u4f1a\u5730\u5740"
-      },
-      "date": {
-        "en": "Building 21, Luxetown Mountaintop Plaza",
-        "zh": "\u6210\u90fd\u9e93\u9547\u5c71\u9876\u5e7f\u573a 21 \u680b"
-      },
-      "time": ""
-    }
-  ],
-  "images": [
-    {
-      "src": "assets/generated/exhibitions/chengdu-art021-spin-2026/booth-poster.jpg",
-      "alt": {
-        "en": "Booth poster for Lu Han at ART021 SPIN Chengdu 2026",
-        "zh": "\u7490\u6c57\u53c2\u52a0 2026 \u6210\u90fd ART021 \u9f99\u95e8\u9635\u7684\u5c55\u4f4d\u6d77\u62a5"
+      {
+        label: { en: "Venue Address", zh: "\u5c55\u4f1a\u5730\u5740" },
+        date: { en: "Building 21, Luxetown Mountaintop Plaza", zh: "\u6210\u90fd\u9e93\u9547\u5c71\u9876\u5e7f\u573a 21 \u680b" },
+        time: ""
       }
-    },
-    {
-      "src": "assets/generated/exhibitions/chengdu-art021-spin-2026/gallery-list.jpg",
-      "alt": {
-        "en": "Gallery list poster for ART021 SPIN Chengdu 2026",
-        "zh": "2026 \u6210\u90fd ART021 \u9f99\u95e8\u9635\u53c2\u5c55\u753b\u5eca\u540d\u5355\u6d77\u62a5"
+    ],
+    images: [
+      {
+        src: "assets/generated/exhibitions/chengdu-art021-spin-2026/booth-poster.jpg",
+        alt: { en: "Booth poster for Lu Han at ART021 SPIN Chengdu 2026", zh: "\u7490\u6c57\u53c2\u52a0 2026 \u6210\u90fd ART021 \u9f99\u95e8\u9635\u7684\u5c55\u4f4d\u6d77\u62a5" }
+      },
+      {
+        src: "assets/generated/exhibitions/chengdu-art021-spin-2026/gallery-list.jpg",
+        alt: { en: "Gallery list poster for ART021 SPIN Chengdu 2026", zh: "2026 \u6210\u90fd ART021 \u9f99\u95e8\u9635\u53c2\u5c55\u753b\u5eca\u540d\u5355\u6d77\u62a5" }
+      },
+      {
+        src: "assets/generated/exhibitions/chengdu-art021-spin-2026/schedule-poster.jpg",
+        alt: { en: "Schedule poster for ART021 SPIN Chengdu 2026", zh: "2026 \u6210\u90fd ART021 \u9f99\u95e8\u9635\u65f6\u95f4\u6d77\u62a5" }
       }
-    },
-    {
-      "src": "assets/generated/exhibitions/chengdu-art021-spin-2026/schedule-poster.jpg",
-      "alt": {
-        "en": "Schedule poster for ART021 SPIN Chengdu 2026",
-        "zh": "2026 \u6210\u90fd ART021 \u9f99\u95e8\u9635\u65f6\u95f4\u6d77\u62a5"
-      }
-    }
-  ]
-};
+    ]
+  }
+];
 
 function readStoredLanguage() {
   try {
@@ -390,11 +391,13 @@ function clearHeroTimer() {
   }
 }
 
-function clearExhibitionMediaTimer() {
-  if (state.exhibitionMediaTimer) {
-    window.clearInterval(state.exhibitionMediaTimer);
-    state.exhibitionMediaTimer = null;
-  }
+function clearExhibitionMediaTimers() {
+  Object.values(state.exhibitionMediaTimers || {}).forEach((timer) => {
+    if (timer) {
+      window.clearInterval(timer);
+    }
+  });
+  state.exhibitionMediaTimers = {};
 }
 
 function pickRandomGlyph(lang = state.lang) {
@@ -893,56 +896,40 @@ function getExhibitionValue(value) {
   return value?.[state.lang] || value?.en || "";
 }
 
-function setActiveExhibitionMedia(index) {
-  document.querySelectorAll("[data-exhibition-media-slide]").forEach((slide, slideIndex) => {
+function setActiveExhibitionMedia(recordId, index) {
+  const panel = document.querySelector(`[data-exhibition-record="${recordId}"]`);
+  if (!panel) return;
+
+  panel.querySelectorAll("[data-exhibition-media-slide]").forEach((slide, slideIndex) => {
     slide.classList.toggle("is-active", slideIndex === index);
     slide.setAttribute("aria-hidden", String(slideIndex !== index));
   });
 
-  document.querySelectorAll("[data-exhibition-media-index]").forEach((button) => {
+  panel.querySelectorAll("[data-exhibition-media-index]").forEach((button) => {
     const isActive = Number(button.dataset.exhibitionMediaIndex) === index;
     button.classList.toggle("is-active", isActive);
     button.setAttribute("aria-pressed", String(isActive));
   });
+
+  state.exhibitionMediaIndices[recordId] = index;
 }
 
 function renderExhibitionsPage() {
-  clearExhibitionMediaTimer();
+  clearExhibitionMediaTimers();
   if (document.body.dataset.page !== "exhibitions") return;
 
-  const kicker = document.getElementById("exhibition-kicker");
-  const title = document.getElementById("exhibition-title");
-  const lead = document.getElementById("exhibition-lead");
-  const meta = document.getElementById("exhibition-meta");
-  const scheduleTitle = document.getElementById("exhibition-schedule-title");
-  const schedule = document.getElementById("exhibition-schedule");
-  const mediaStage = document.getElementById("exhibition-media-stage");
-  const mediaControls = document.getElementById("exhibition-media-controls");
-  const images = EXHIBITION_RECORD.images || [];
+  const container = document.getElementById("exhibitions-list");
+  if (!container) return;
 
-  if (kicker) {
-    kicker.textContent = "";
-    kicker.hidden = true;
-  }
-  if (title) title.textContent = getExhibitionValue(EXHIBITION_RECORD.title);
-  if (lead) lead.textContent = getExhibitionValue(EXHIBITION_RECORD.lead);
-
-  if (meta) {
-    meta.innerHTML = EXHIBITION_RECORD.details.map((item) => `
+  container.innerHTML = EXHIBITION_RECORDS.map((record) => {
+    const detailsMarkup = (record.details || []).map((item) => `
       <div class="exhibition-info-row">
         <span class="exhibition-info-row__label">${escapeHtml(getExhibitionValue(item.label))}</span>
         <p class="exhibition-info-row__value">${escapeHtml(getExhibitionValue(item.value))}</p>
       </div>
     `).join("");
-  }
 
-  if (scheduleTitle) {
-    const scheduleTitleValue = getExhibitionValue(EXHIBITION_RECORD.scheduleTitle);
-    scheduleTitle.textContent = scheduleTitleValue;
-    scheduleTitle.hidden = !scheduleTitleValue;
-  }
-  if (schedule) {
-    schedule.innerHTML = EXHIBITION_RECORD.schedule.map((item) => `
+    const scheduleMarkup = (record.schedule || []).map((item) => `
       <div class="exhibition-schedule-row">
         <span class="exhibition-schedule-row__label">${escapeHtml(getExhibitionValue(item.label))}</span>
         <div class="exhibition-schedule-row__body">
@@ -951,67 +938,98 @@ function renderExhibitionsPage() {
         </div>
       </div>
     `).join("");
-  }
 
-  state.exhibitionMediaIndex = Number.isFinite(state.exhibitionMediaIndex)
-    ? state.exhibitionMediaIndex % Math.max(images.length, 1)
-    : 0;
+    return `
+      <section class="content-panel reveal exhibition-panel${record.preserveImageRatio ? " exhibition-panel--preserve-ratio" : ""}" data-exhibition-record="${record.id}">
+        <div class="exhibition-panel__media-block">
+          <div class="exhibition-media-stage" data-exhibition-media-stage aria-live="polite"></div>
+          <div class="exhibition-media-controls exhibition-media-controls--dots" data-exhibition-media-controls></div>
+        </div>
 
-  if (mediaStage) {
-    mediaStage.innerHTML = images.map((image, index) => {
-      const loading = index === 0 ? "eager" : "lazy";
-      const fetchPriority = index === 0 ? "high" : "auto";
-      return `
-        <figure class="exhibition-media-frame${index === state.exhibitionMediaIndex ? " is-active" : ""}" data-exhibition-media-slide aria-hidden="${index === state.exhibitionMediaIndex ? "false" : "true"}">
-          <img src="${encodeURI(basePath(image.src))}" alt="${escapeHtml(getExhibitionValue(image.alt))}" loading="${loading}" fetchpriority="${fetchPriority}">
-        </figure>
-      `;
-    }).join("");
-  }
+        <div class="exhibition-copy-panel">
+          <h1 class="exhibition-title">${escapeHtml(getExhibitionValue(record.title))}</h1>
+          <p class="about-copy exhibition-lead">${escapeHtml(getExhibitionValue(record.lead))}</p>
+          <div class="exhibition-info-list">${detailsMarkup}</div>
+          ${scheduleMarkup ? `<div class="exhibition-schedule-list">${scheduleMarkup}</div>` : ""}
+        </div>
+      </section>
+    `;
+  }).join("");
 
-  if (mediaControls) {
-    mediaControls.innerHTML = images.map((image, index) => `
-      <button class="exhibition-media-toggle${index === state.exhibitionMediaIndex ? " is-active" : ""}" type="button" data-exhibition-media-index="${index}" aria-pressed="${index === state.exhibitionMediaIndex ? "true" : "false"}" aria-label="${escapeHtml(getExhibitionValue(image.alt))}">
-        <span class="exhibition-media-toggle__dot" aria-hidden="true"></span>
-      </button>
-    `).join("");
-  }
+  EXHIBITION_RECORDS.forEach((record) => {
+    const panel = container.querySelector(`[data-exhibition-record="${record.id}"]`);
+    if (!panel) return;
 
-  const advanceMedia = () => {
-    if (images.length < 2) return;
-    state.exhibitionMediaIndex = (state.exhibitionMediaIndex + 1) % images.length;
-    setActiveExhibitionMedia(state.exhibitionMediaIndex);
-  };
+    const mediaStage = panel.querySelector("[data-exhibition-media-stage]");
+    const mediaControls = panel.querySelector("[data-exhibition-media-controls]");
+    const images = record.images || [];
+    const currentIndex = Number.isFinite(state.exhibitionMediaIndices[record.id])
+      ? state.exhibitionMediaIndices[record.id] % Math.max(images.length, 1)
+      : 0;
 
-  const startMediaTimer = () => {
-    clearExhibitionMediaTimer();
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || images.length < 2) {
-      return;
+    state.exhibitionMediaIndices[record.id] = currentIndex;
+
+    if (mediaStage) {
+      mediaStage.innerHTML = images.map((image, index) => {
+        const loading = index === 0 ? "eager" : "lazy";
+        const fetchPriority = index === 0 ? "high" : "auto";
+        return `
+          <figure class="exhibition-media-frame${index === currentIndex ? " is-active" : ""}" data-exhibition-media-slide data-exhibition-media-ratio="${image.ratio || ""}" aria-hidden="${index === currentIndex ? "false" : "true"}">
+            <img src="${encodeURI(basePath(image.src))}" alt="${escapeHtml(getExhibitionValue(image.alt))}" loading="${loading}" fetchpriority="${fetchPriority}">
+          </figure>
+        `;
+      }).join("");
     }
-    state.exhibitionMediaTimer = window.setInterval(() => {
-      advanceMedia();
-    }, 5200);
-  };
 
-  if (mediaStage) {
-    mediaStage.onclick = () => {
-      advanceMedia();
-      startMediaTimer();
+    if (mediaControls) {
+      const hasMultipleImages = images.length > 1;
+      mediaControls.hidden = !hasMultipleImages;
+      mediaControls.innerHTML = hasMultipleImages
+        ? images.map((image, index) => `
+            <button class="exhibition-media-toggle${index === currentIndex ? " is-active" : ""}" type="button" data-exhibition-media-index="${index}" aria-pressed="${index === currentIndex ? "true" : "false"}" aria-label="${escapeHtml(getExhibitionValue(image.alt))}">
+              <span class="exhibition-media-toggle__dot" aria-hidden="true"></span>
+            </button>
+          `).join("")
+        : "";
+    }
+
+    const advanceMedia = () => {
+      if (images.length < 2) return;
+      const nextIndex = (state.exhibitionMediaIndices[record.id] + 1) % images.length;
+      setActiveExhibitionMedia(record.id, nextIndex);
     };
-  }
 
-  document.querySelectorAll("[data-exhibition-media-index]").forEach((button) => {
-    button.addEventListener("click", () => {
-      state.exhibitionMediaIndex = Number(button.dataset.exhibitionMediaIndex);
-      setActiveExhibitionMedia(state.exhibitionMediaIndex);
-      startMediaTimer();
+    const startMediaTimer = () => {
+      if (state.exhibitionMediaTimers[record.id]) {
+        window.clearInterval(state.exhibitionMediaTimers[record.id]);
+      }
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || images.length < 2) {
+        return;
+      }
+      state.exhibitionMediaTimers[record.id] = window.setInterval(() => {
+        advanceMedia();
+      }, 5200);
+    };
+
+    if (mediaStage) {
+      mediaStage.onclick = () => {
+        advanceMedia();
+        startMediaTimer();
+      };
+    }
+
+    panel.querySelectorAll("[data-exhibition-media-index]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const nextIndex = Number(button.dataset.exhibitionMediaIndex);
+        setActiveExhibitionMedia(record.id, nextIndex);
+        startMediaTimer();
+      });
     });
+
+    setActiveExhibitionMedia(record.id, currentIndex);
+    startMediaTimer();
   });
-
-  setActiveExhibitionMedia(state.exhibitionMediaIndex);
-  startMediaTimer();
 }
-
 
 function renderContactPage() {
   if (document.body.dataset.page !== "contact") return;

@@ -11,7 +11,7 @@ window.LUHAN_SITE_DATA = {
       2023
     ],
     "yearCounts": {
-      "2026": 10,
+      "2026": 11,
       "2025": 37,
       "2024": 10,
       "2023": 6
@@ -19,7 +19,7 @@ window.LUHAN_SITE_DATA = {
     "sizeBuckets": [
       {
         "size": "40 x 40 cm",
-        "count": 28
+        "count": 29
       },
       {
         "size": "70 x 50 cm",
@@ -86,34 +86,42 @@ window.LUHAN_SITE_DATA = {
       {
         "id": "hero-02",
         "order": 2,
-        "year": 2025,
-        "title_en": "In Your Unknowing",
-        "title_zh": "在你不知处",
-        "image": "assets/generated/hero/slide-02-5d9d7cb501.jpg"
+        "year": 2026,
+        "title_en": "You Dropped a Pearl",
+        "title_zh": "你的珍珠掉了",
+        "image": "assets/generated/hero/slide-02-0967d12ce9.jpg"
       },
       {
         "id": "hero-03",
         "order": 3,
         "year": 2025,
-        "title_en": "Sand at My Fingertips",
-        "title_zh": "指尖的沙",
-        "image": "assets/generated/hero/slide-03-424c185a56.jpg"
+        "title_en": "In Your Unknowing",
+        "title_zh": "在你不知处",
+        "image": "assets/generated/hero/slide-03-5d9d7cb501.jpg"
       },
       {
         "id": "hero-04",
         "order": 4,
         "year": 2025,
-        "title_en": "Crimson Tears",
-        "title_zh": "胭脂泪",
-        "image": "assets/generated/hero/slide-04-8baeb7693d.jpg"
+        "title_en": "Sand at My Fingertips",
+        "title_zh": "指尖的沙",
+        "image": "assets/generated/hero/slide-04-424c185a56.jpg"
       },
       {
         "id": "hero-05",
         "order": 5,
         "year": 2025,
+        "title_en": "Crimson Tears",
+        "title_zh": "胭脂泪",
+        "image": "assets/generated/hero/slide-05-8baeb7693d.jpg"
+      },
+      {
+        "id": "hero-06",
+        "order": 6,
+        "year": 2025,
         "title_en": "Who Nurtured Your Tears into the Sea",
         "title_zh": "谁把你的泪养成了海",
-        "image": "assets/generated/hero/slide-05-c2155574a1.jpg"
+        "image": "assets/generated/hero/slide-06-c2155574a1.jpg"
       }
     ],
     "yearPreviewCovers": {
@@ -162,7 +170,7 @@ window.LUHAN_SITE_DATA = {
   },
   "about": {
     "portrait": "assets/generated/about/portrait.jpg",
-    "pdf": "assets/generated/about/璐汗2026作品.pdf",
+    "pdf": "assets/generated/about/璐汗2026作品-2026.4.26日替换用.pdf",
     "bio": {
       "zh": [
         "璐汗，1983 年生，现居上海。本科就读于白俄罗斯国立艺术学院，2010 年以专业总分第一名考入中国美术学院油画系第一工作室攻读研究生。",
@@ -245,6 +253,25 @@ window.LUHAN_SITE_DATA = {
   },
   "artworks": [
     {
+      "id": "you-dropped-a-pearl-2026",
+      "slug": "you-dropped-a-pearl-2026",
+      "year": 2026,
+      "title_en": "You Dropped a Pearl",
+      "title_zh": "你的珍珠掉了",
+      "medium_en": "Oil on wood",
+      "medium_zh": "Oil on wood",
+      "size": "40 x 40 cm",
+      "size_bucket": "40 x 40 cm",
+      "series_slot": "series-b",
+      "orientation": "square",
+      "duplicate_index": 1,
+      "public": true,
+      "source_path": "作品_整理后/2026/你的珍珠掉了 You Dropped a Pearl 2026 Oil on wood 40 x 40 cm.jpg",
+      "sort_order": 1,
+      "image_web": "assets/generated/works/web/you-dropped-a-pearl-2026.jpg",
+      "image_thumb": "assets/generated/works/thumb/you-dropped-a-pearl-2026.jpg"
+    },
+    {
       "id": "clover-2026",
       "slug": "clover-2026",
       "year": 2026,
@@ -259,7 +286,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/四叶草 Clover 2026 Oil on Wood 140 x 100 cm.jpg",
-      "sort_order": 1,
+      "sort_order": 2,
       "image_web": "assets/generated/works/web/clover-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/clover-2026.jpg"
     },
@@ -278,7 +305,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/拥抱我 Embrace Me 2026 Oil on Canvas 120 x 90 cm.jpg",
-      "sort_order": 2,
+      "sort_order": 3,
       "image_web": "assets/generated/works/web/embrace-me-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/embrace-me-2026.jpg"
     },
@@ -297,7 +324,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/洗尽铅华 After the Glamour 2026 Oil on Wood 60 x 60 cm.jpg",
-      "sort_order": 3,
+      "sort_order": 4,
       "image_web": "assets/generated/works/web/after-the-glamour-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/after-the-glamour-2026.jpg"
     },
@@ -316,7 +343,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/我爱你，与你无关 I Love You, Irrelevant of You 2026 Oil on Wood 60 x 60 cm.jpg",
-      "sort_order": 4,
+      "sort_order": 5,
       "image_web": "assets/generated/works/web/i-love-you-irrelevant-of-you-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/i-love-you-irrelevant-of-you-2026.jpg"
     },
@@ -335,7 +362,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/饲养光阴 Feeding on Time 2026 Oil on Wood 70 x 50 cm.jpg",
-      "sort_order": 5,
+      "sort_order": 6,
       "image_web": "assets/generated/works/web/feeding-on-time-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/feeding-on-time-2026.jpg"
     },
@@ -354,7 +381,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/羽蝶 Feathered Butterfly 2026 Oil on Wood 50 x 40 cm.jpg",
-      "sort_order": 6,
+      "sort_order": 7,
       "image_web": "assets/generated/works/web/feathered-butterfly-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/feathered-butterfly-2026.jpg"
     },
@@ -373,7 +400,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/自重 Gravity 2026 Oil on Wood 40 x 40 cm.jpg",
-      "sort_order": 7,
+      "sort_order": 8,
       "image_web": "assets/generated/works/web/gravity-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/gravity-2026.jpg"
     },
@@ -392,7 +419,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/被偷走的欲望 Stolen Desire 2026 Oil on Wood 40 x 40 cm.jpg",
-      "sort_order": 8,
+      "sort_order": 9,
       "image_web": "assets/generated/works/web/stolen-desire-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/stolen-desire-2026.jpg"
     },
@@ -411,7 +438,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/爱浪 Tides of Love 2026 Oil on Wood 40 x 40 cm.jpg",
-      "sort_order": 9,
+      "sort_order": 10,
       "image_web": "assets/generated/works/web/tides-of-love-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/tides-of-love-2026.jpg"
     },
@@ -430,7 +457,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/那时我们很幸福 We Were Happy Then 2026 Oil on Wood 40 x 40 cm.jpg",
-      "sort_order": 10,
+      "sort_order": 11,
       "image_web": "assets/generated/works/web/we-were-happy-then-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/we-were-happy-then-2026.jpg"
     },

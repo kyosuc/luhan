@@ -853,9 +853,14 @@ body[data-page="home"] .site-header {
 
 
 
+.exhibitions-stack {
+  display: grid;
+  gap: 28px;
+}
+
 .exhibition-panel {
   width: min(100%, 1040px);
-  margin: 28px auto 0;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: minmax(280px, 0.66fr) minmax(0, 1fr);
   gap: 34px;
@@ -869,6 +874,11 @@ body[data-page="home"] .site-header {
   align-self: stretch;
   height: 100%;
   min-height: 0;
+}
+
+.exhibition-panel--preserve-ratio .exhibition-panel__media-block {
+  align-self: start;
+  height: auto;
 }
 
 .exhibition-kicker {
@@ -1003,6 +1013,12 @@ body[data-page="home"] .site-header {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.015));
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
   cursor: pointer;
+}
+
+.exhibition-panel--preserve-ratio .exhibition-media-stage {
+  aspect-ratio: 73 / 100;
+  height: auto;
+  min-height: 0;
 }
 
 .exhibition-media-frame {
@@ -1610,16 +1626,16 @@ body[data-page="archive-year"] .art-card.reveal.is-visible .art-card__body > *:n
 /* exhibitions text cascade */
 body[data-page="exhibitions"] .exhibition-title,
 body[data-page="exhibitions"] .exhibition-lead,
-body[data-page="exhibitions"] #exhibition-meta > *,
-body[data-page="exhibitions"] #exhibition-schedule > * {
+body[data-page="exhibitions"] .exhibition-info-list > *,
+body[data-page="exhibitions"] .exhibition-schedule-list > * {
   opacity: 0;
   transform: translate3d(0, 16px, 0);
 }
 
 body[data-page="exhibitions"] .content-panel.reveal.is-visible .exhibition-title,
 body[data-page="exhibitions"] .content-panel.reveal.is-visible .exhibition-lead,
-body[data-page="exhibitions"] .content-panel.reveal.is-visible #exhibition-meta > *,
-body[data-page="exhibitions"] .content-panel.reveal.is-visible #exhibition-schedule > * {
+body[data-page="exhibitions"] .content-panel.reveal.is-visible .exhibition-info-list > *,
+body[data-page="exhibitions"] .content-panel.reveal.is-visible .exhibition-schedule-list > * {
   animation: worksTextCascade 860ms cubic-bezier(0.18, 0.72, 0.2, 1) forwards;
 }
 
@@ -1631,27 +1647,27 @@ body[data-page="exhibitions"] .content-panel.reveal.is-visible .exhibition-lead 
   animation-delay: 170ms;
 }
 
-body[data-page="exhibitions"] .content-panel.reveal.is-visible #exhibition-meta > *:nth-child(1) {
+body[data-page="exhibitions"] .content-panel.reveal.is-visible .exhibition-info-list > *:nth-child(1) {
   animation-delay: 270ms;
 }
 
-body[data-page="exhibitions"] .content-panel.reveal.is-visible #exhibition-meta > *:nth-child(2) {
+body[data-page="exhibitions"] .content-panel.reveal.is-visible .exhibition-info-list > *:nth-child(2) {
   animation-delay: 360ms;
 }
 
-body[data-page="exhibitions"] .content-panel.reveal.is-visible #exhibition-meta > *:nth-child(3) {
+body[data-page="exhibitions"] .content-panel.reveal.is-visible .exhibition-info-list > *:nth-child(3) {
   animation-delay: 450ms;
 }
 
-body[data-page="exhibitions"] .content-panel.reveal.is-visible #exhibition-schedule > *:nth-child(1) {
+body[data-page="exhibitions"] .content-panel.reveal.is-visible .exhibition-schedule-list > *:nth-child(1) {
   animation-delay: 540ms;
 }
 
-body[data-page="exhibitions"] .content-panel.reveal.is-visible #exhibition-schedule > *:nth-child(2) {
+body[data-page="exhibitions"] .content-panel.reveal.is-visible .exhibition-schedule-list > *:nth-child(2) {
   animation-delay: 630ms;
 }
 
-body[data-page="exhibitions"] .content-panel.reveal.is-visible #exhibition-schedule > *:nth-child(3) {
+body[data-page="exhibitions"] .content-panel.reveal.is-visible .exhibition-schedule-list > *:nth-child(3) {
   animation-delay: 720ms;
 }
 
@@ -1821,8 +1837,12 @@ body[data-page="about"] .info-panel.reveal.is-visible .info-list > *:nth-child(5
 
   body[data-page="works-year"] .year-grid,
   body[data-page="about"] .about-layout,
-  body[data-page="exhibitions"] .exhibition-panel {
+  body[data-page="exhibitions"] .exhibitions-stack {
     margin-top: 12px;
+  }
+
+  body[data-page="exhibitions"] .exhibitions-stack {
+    gap: 18px;
   }
 
   .hero {
@@ -2349,11 +2369,6 @@ body[data-page="home"] .hero-slide img {
   object-position: 52% 48%;
   filter: saturate(0.84) brightness(0.72) contrast(1.04);
   animation: heroDriftV5 23s cubic-bezier(0.42, 0.08, 0.26, 0.98) infinite alternate;
-}
-
-body[data-page="home"] .hero-slide:nth-child(2n) img {
-  object-position: 48% 46%;
-  animation-direction: alternate-reverse;
 }
 
 body[data-page="home"] .hero-slide:nth-child(3n) img {
