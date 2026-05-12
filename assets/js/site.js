@@ -167,7 +167,7 @@ const EXHIBITION_RECORDS = [
     ],
     images: [
       {
-        src: "assets/generated/exhibitions/beijing-dangdai-2026/land-trace-key-visual.png",
+        src: "assets/generated/exhibitions/beijing-dangdai-2026/land-trace-key-visual.jpg",
         alt: { en: "Official key visual for Beijing Dangdai Art Fair 2026", zh: "2026 \u5317\u4eac\u5f53\u4ee3\u827a\u535a\u4f1a\u201c\u9646\u8ff9\u201d\u5b98\u65b9\u4e3b\u89c6\u89c9" },
         ratio: "1024 / 723"
       },
