@@ -11,7 +11,7 @@ window.LUHAN_SITE_DATA = {
       2023
     ],
     "yearCounts": {
-      "2026": 19,
+      "2026": 20,
       "2025": 38,
       "2024": 10,
       "2023": 6
@@ -23,7 +23,7 @@ window.LUHAN_SITE_DATA = {
       },
       {
         "size": "70 x 50 cm",
-        "count": 9
+        "count": 10
       },
       {
         "size": "50 x 40 cm",
@@ -257,6 +257,25 @@ window.LUHAN_SITE_DATA = {
   },
   "artworks": [
     {
+      "id": "spirit-perch-2026",
+      "slug": "spirit-perch-2026",
+      "year": 2026,
+      "title_en": "Spirit Perch",
+      "title_zh": "三足·何枝可依",
+      "medium_en": "Oil on Canvas",
+      "medium_zh": "Oil on Canvas",
+      "size": "70 x 50 cm",
+      "size_bucket": "70 x 50 cm",
+      "series_slot": "series-b",
+      "orientation": "landscape",
+      "duplicate_index": 1,
+      "public": true,
+      "source_path": "作品_整理后/2026/三足·何枝可依 Spirit Perch 2026 Oil on Canvas 70 x 50 cm.jpg",
+      "sort_order": 1,
+      "image_web": "assets/generated/works/web/spirit-perch-2026.jpg",
+      "image_thumb": "assets/generated/works/thumb/spirit-perch-2026.jpg"
+    },
+    {
       "id": "kindred-spirit-2026",
       "slug": "kindred-spirit-2026",
       "year": 2026,
@@ -271,7 +290,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/知音 Kindred Spirit 2026 Oil on Wood 40 x 40 cm.jpg",
-      "sort_order": 1,
+      "sort_order": 2,
       "image_web": "assets/generated/works/web/kindred-spirit-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/kindred-spirit-2026.jpg"
     },
@@ -290,7 +309,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/彼岸 此岸 The Other Shore, This Shore 2026 Oil on Wood 40 x 40 cm.jpg",
-      "sort_order": 2,
+      "sort_order": 3,
       "image_web": "assets/generated/works/web/the-other-shore-this-shore-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/the-other-shore-this-shore-2026.jpg"
     },
@@ -309,7 +328,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/烂漫盛开 Rapturous Bloom 2026 Oil on Wood 70 x 50 cm.jpg",
-      "sort_order": 3,
+      "sort_order": 4,
       "image_web": "assets/generated/works/web/rapturous-bloom-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/rapturous-bloom-2026.jpg"
     },
@@ -328,7 +347,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/倚靠的宇宙 A Universe to Lean On 2026 Mixed Media on Wood 40 x 40 cm.jpg",
-      "sort_order": 4,
+      "sort_order": 5,
       "image_web": "assets/generated/works/web/a-universe-to-lean-on-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/a-universe-to-lean-on-2026.jpg"
     },
@@ -347,7 +366,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/一万滴流星 Ten Thousand Drops of Falling Stars 2026 Oil on Wood 40 x 40 cm.jpg",
-      "sort_order": 5,
+      "sort_order": 6,
       "image_web": "assets/generated/works/web/ten-thousand-drops-of-falling-stars-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/ten-thousand-drops-of-falling-stars-2026.jpg"
     },
@@ -366,7 +385,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/髋臼涓流 Acetabular Confluence 2026 Oil on Wood 40 x 40 cm.jpg",
-      "sort_order": 6,
+      "sort_order": 7,
       "image_web": "assets/generated/works/web/acetabular-confluence-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/acetabular-confluence-2026.jpg"
     },
@@ -385,7 +404,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/嘀嗒 Ticking Tears 2026 Oil on Canvas 70 x 50 cm.jpg",
-      "sort_order": 7,
+      "sort_order": 8,
       "image_web": "assets/generated/works/web/ticking-tears-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/ticking-tears-2026.jpg"
     },
@@ -404,7 +423,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/埶 Skill 2026 Oil on Wood 40 x 40 cm.jpg",
-      "sort_order": 8,
+      "sort_order": 9,
       "image_web": "assets/generated/works/web/skill-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/skill-2026.jpg"
     },
@@ -423,7 +442,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/你的珍珠掉了 You Dropped a Pearl 2026 Oil on Wood 40 x 40 cm.jpg",
-      "sort_order": 9,
+      "sort_order": 10,
       "image_web": "assets/generated/works/web/you-dropped-a-pearl-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/you-dropped-a-pearl-2026.jpg"
     },
@@ -442,7 +461,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/四叶草 Clover 2026 Oil on Wood 140 x 100 cm.jpg",
-      "sort_order": 10,
+      "sort_order": 11,
       "image_web": "assets/generated/works/web/clover-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/clover-2026.jpg"
     },
@@ -461,7 +480,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/拥抱我 Embrace Me 2026 Oil on Canvas 120 x 90 cm.jpg",
-      "sort_order": 11,
+      "sort_order": 12,
       "image_web": "assets/generated/works/web/embrace-me-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/embrace-me-2026.jpg"
     },
@@ -480,7 +499,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/洗尽铅华 After the Glamour 2026 Oil on Wood 60 x 60 cm.jpg",
-      "sort_order": 12,
+      "sort_order": 13,
       "image_web": "assets/generated/works/web/after-the-glamour-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/after-the-glamour-2026.jpg"
     },
@@ -499,7 +518,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/我爱你，与你无关 I Love You, Irrelevant of You 2026 Oil on Wood 60 x 60 cm.jpg",
-      "sort_order": 13,
+      "sort_order": 14,
       "image_web": "assets/generated/works/web/i-love-you-irrelevant-of-you-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/i-love-you-irrelevant-of-you-2026.jpg"
     },
@@ -518,7 +537,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/饲养光阴 Feeding on Time 2026 Oil on Wood 70 x 50 cm.jpg",
-      "sort_order": 14,
+      "sort_order": 15,
       "image_web": "assets/generated/works/web/feeding-on-time-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/feeding-on-time-2026.jpg"
     },
@@ -537,7 +556,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/羽蝶 Feathered Butterfly 2026 Oil on Wood 50 x 40 cm.jpg",
-      "sort_order": 15,
+      "sort_order": 16,
       "image_web": "assets/generated/works/web/feathered-butterfly-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/feathered-butterfly-2026.jpg"
     },
@@ -556,7 +575,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/自重 Gravity 2026 Oil on Wood 40 x 40 cm.jpg",
-      "sort_order": 16,
+      "sort_order": 17,
       "image_web": "assets/generated/works/web/gravity-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/gravity-2026.jpg"
     },
@@ -575,7 +594,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/被偷走的欲望 Stolen Desire 2026 Oil on Wood 40 x 40 cm.jpg",
-      "sort_order": 17,
+      "sort_order": 18,
       "image_web": "assets/generated/works/web/stolen-desire-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/stolen-desire-2026.jpg"
     },
@@ -594,7 +613,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/爱浪 Tides of Love 2026 Oil on Wood 40 x 40 cm.jpg",
-      "sort_order": 18,
+      "sort_order": 19,
       "image_web": "assets/generated/works/web/tides-of-love-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/tides-of-love-2026.jpg"
     },
@@ -613,7 +632,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/那时我们很幸福 We Were Happy Then 2026 Oil on Wood 40 x 40 cm.jpg",
-      "sort_order": 19,
+      "sort_order": 20,
       "image_web": "assets/generated/works/web/we-were-happy-then-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/we-were-happy-then-2026.jpg"
     },
