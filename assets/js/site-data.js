@@ -11,7 +11,7 @@ window.LUHAN_SITE_DATA = {
       2023
     ],
     "yearCounts": {
-      "2026": 20,
+      "2026": 30,
       "2025": 38,
       "2024": 10,
       "2023": 6
@@ -19,23 +19,23 @@ window.LUHAN_SITE_DATA = {
     "sizeBuckets": [
       {
         "size": "40 x 40 cm",
-        "count": 35
+        "count": 37
       },
       {
         "size": "70 x 50 cm",
-        "count": 10
+        "count": 13
+      },
+      {
+        "size": "140 x 100 cm",
+        "count": 7
+      },
+      {
+        "size": "120 x 80 cm",
+        "count": 6
       },
       {
         "size": "50 x 40 cm",
         "count": 6
-      },
-      {
-        "size": "120 x 80 cm",
-        "count": 5
-      },
-      {
-        "size": "140 x 100 cm",
-        "count": 3
       },
       {
         "size": "100 x 80 cm",
@@ -466,6 +466,82 @@ window.LUHAN_SITE_DATA = {
       "image_thumb": "assets/generated/works/thumb/clover-2026.jpg"
     },
     {
+      "id": "flowers-bloom-in-their-own-time-2026",
+      "slug": "flowers-bloom-in-their-own-time-2026",
+      "year": 2026,
+      "title_en": "Flowers Bloom in Their Own Time",
+      "title_zh": "花开有时",
+      "medium_en": "Oil on Wood",
+      "medium_zh": "Oil on Wood",
+      "size": "140 x 100 cm",
+      "size_bucket": "140 x 100 cm",
+      "series_slot": "series-b",
+      "orientation": "landscape",
+      "duplicate_index": 1,
+      "public": true,
+      "source_path": "作品_整理后/2026.10.8更新的一些！/花开有时 Flowers Bloom in Their Own Time 2026 Oil on Wood 140 x 100 cm.jpg",
+      "sort_order": 12,
+      "image_web": "assets/generated/works/web/flowers-bloom-in-their-own-time-2026.jpg",
+      "image_thumb": "assets/generated/works/thumb/flowers-bloom-in-their-own-time-2026.jpg"
+    },
+    {
+      "id": "the-grating-of-memory-2026",
+      "slug": "the-grating-of-memory-2026",
+      "year": 2026,
+      "title_en": "The Grating of Memory",
+      "title_zh": "记忆的光栅",
+      "medium_en": "Oil on Wood",
+      "medium_zh": "Oil on Wood",
+      "size": "140 x 100 cm",
+      "size_bucket": "140 x 100 cm",
+      "series_slot": "series-b",
+      "orientation": "landscape",
+      "duplicate_index": 1,
+      "public": true,
+      "source_path": "作品_整理后/2026.10.8更新的一些！/记忆的光栅 The Grating of Memory 2026 Oil on Wood 140 x 100 cm.jpg",
+      "sort_order": 13,
+      "image_web": "assets/generated/works/web/the-grating-of-memory-2026.jpg",
+      "image_thumb": "assets/generated/works/thumb/the-grating-of-memory-2026.jpg"
+    },
+    {
+      "id": "the-indweller-2026",
+      "slug": "the-indweller-2026",
+      "year": 2026,
+      "title_en": "The Indweller",
+      "title_zh": "寄居者",
+      "medium_en": "Oil on Wood",
+      "medium_zh": "Oil on Wood",
+      "size": "140 x 100 cm",
+      "size_bucket": "140 x 100 cm",
+      "series_slot": "series-b",
+      "orientation": "landscape",
+      "duplicate_index": 1,
+      "public": true,
+      "source_path": "作品_整理后/2026.10.8更新的一些！/寄居者 The Indweller 2026 Oil on Wood 140 x 100 cm.jpg",
+      "sort_order": 14,
+      "image_web": "assets/generated/works/web/the-indweller-2026.jpg",
+      "image_thumb": "assets/generated/works/thumb/the-indweller-2026.jpg"
+    },
+    {
+      "id": "there-is-no-place-that-has-not-seen-you-2026",
+      "slug": "there-is-no-place-that-has-not-seen-you-2026",
+      "year": 2026,
+      "title_en": "There Is No Place That Has Not Seen You",
+      "title_zh": "没有一处不曾见你",
+      "medium_en": "Oil on Wood",
+      "medium_zh": "Oil on Wood",
+      "size": "140 x 100 cm",
+      "size_bucket": "140 x 100 cm",
+      "series_slot": "series-b",
+      "orientation": "landscape",
+      "duplicate_index": 1,
+      "public": true,
+      "source_path": "作品_整理后/2026.10.8更新的一些！/没有一处不曾见你 There Is No Place That Has Not Seen You 2026 Oil on Wood 140 x 100 cm.jpg",
+      "sort_order": 15,
+      "image_web": "assets/generated/works/web/there-is-no-place-that-has-not-seen-you-2026.jpg",
+      "image_thumb": "assets/generated/works/thumb/there-is-no-place-that-has-not-seen-you-2026.jpg"
+    },
+    {
       "id": "embrace-me-2026",
       "slug": "embrace-me-2026",
       "year": 2026,
@@ -480,9 +556,28 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/拥抱我 Embrace Me 2026 Oil on Canvas 120 x 90 cm.jpg",
-      "sort_order": 12,
+      "sort_order": 16,
       "image_web": "assets/generated/works/web/embrace-me-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/embrace-me-2026.jpg"
+    },
+    {
+      "id": "an-unreachable-nearness-2026",
+      "slug": "an-unreachable-nearness-2026",
+      "year": 2026,
+      "title_en": "An Unreachable Nearness",
+      "title_zh": "碰不到的接近",
+      "medium_en": "Oil on Canvas",
+      "medium_zh": "Oil on Canvas",
+      "size": "120 x 80 cm",
+      "size_bucket": "120 x 80 cm",
+      "series_slot": "series-b",
+      "orientation": "landscape",
+      "duplicate_index": 1,
+      "public": true,
+      "source_path": "作品_整理后/2026.10.8更新的一些！/碰不到的接近 An Unreachable Nearness 2026 Oil on Canvas 120 x 80 cm.jpg",
+      "sort_order": 17,
+      "image_web": "assets/generated/works/web/an-unreachable-nearness-2026.jpg",
+      "image_thumb": "assets/generated/works/thumb/an-unreachable-nearness-2026.jpg"
     },
     {
       "id": "after-the-glamour-2026",
@@ -499,7 +594,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/洗尽铅华 After the Glamour 2026 Oil on Wood 60 x 60 cm.jpg",
-      "sort_order": 13,
+      "sort_order": 18,
       "image_web": "assets/generated/works/web/after-the-glamour-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/after-the-glamour-2026.jpg"
     },
@@ -518,9 +613,28 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/我爱你，与你无关 I Love You, Irrelevant of You 2026 Oil on Wood 60 x 60 cm.jpg",
-      "sort_order": 14,
+      "sort_order": 19,
       "image_web": "assets/generated/works/web/i-love-you-irrelevant-of-you-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/i-love-you-irrelevant-of-you-2026.jpg"
+    },
+    {
+      "id": "because-you-are-the-firmament-2026",
+      "slug": "because-you-are-the-firmament-2026",
+      "year": 2026,
+      "title_en": "Because You Are the Firmament",
+      "title_zh": "因为你是片苍穹",
+      "medium_en": "Oil on Wood",
+      "medium_zh": "Oil on Wood",
+      "size": "70 x 50 cm",
+      "size_bucket": "70 x 50 cm",
+      "series_slot": "series-b",
+      "orientation": "landscape",
+      "duplicate_index": 1,
+      "public": true,
+      "source_path": "作品_整理后/2026.10.8更新的一些！/因为你是片苍穹 Because You Are the Firmament 2026 Oil on Wood 70 x 50 cm.png",
+      "sort_order": 20,
+      "image_web": "assets/generated/works/web/because-you-are-the-firmament-2026.jpg",
+      "image_thumb": "assets/generated/works/thumb/because-you-are-the-firmament-2026.jpg"
     },
     {
       "id": "feeding-on-time-2026",
@@ -537,9 +651,47 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/饲养光阴 Feeding on Time 2026 Oil on Wood 70 x 50 cm.jpg",
-      "sort_order": 15,
+      "sort_order": 21,
       "image_web": "assets/generated/works/web/feeding-on-time-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/feeding-on-time-2026.jpg"
+    },
+    {
+      "id": "sapphire-star-2026",
+      "slug": "sapphire-star-2026",
+      "year": 2026,
+      "title_en": "Sapphire Star",
+      "title_zh": "苍蓝星",
+      "medium_en": "Oil on Canvas",
+      "medium_zh": "Oil on Canvas",
+      "size": "70 x 50 cm",
+      "size_bucket": "70 x 50 cm",
+      "series_slot": "series-b",
+      "orientation": "landscape",
+      "duplicate_index": 1,
+      "public": true,
+      "source_path": "作品_整理后/2026.10.8更新的一些！/苍蓝星 Sapphire Star 2026 Oil on Canvas 70 x 50 cm.jpg",
+      "sort_order": 22,
+      "image_web": "assets/generated/works/web/sapphire-star-2026.jpg",
+      "image_thumb": "assets/generated/works/thumb/sapphire-star-2026.jpg"
+    },
+    {
+      "id": "water-tree-silver-blossoms-2026",
+      "slug": "water-tree-silver-blossoms-2026",
+      "year": 2026,
+      "title_en": "Water-Tree, Silver Blossoms",
+      "title_zh": "水树银花",
+      "medium_en": "Oil on Wood",
+      "medium_zh": "Oil on Wood",
+      "size": "70 x 50 cm",
+      "size_bucket": "70 x 50 cm",
+      "series_slot": "series-b",
+      "orientation": "landscape",
+      "duplicate_index": 1,
+      "public": true,
+      "source_path": "作品_整理后/2026.10.8更新的一些！/水树银花 Water-Tree, Silver Blossoms 2026 Oil on Wood 70 x 50 cm.jpg",
+      "sort_order": 23,
+      "image_web": "assets/generated/works/web/water-tree-silver-blossoms-2026.jpg",
+      "image_thumb": "assets/generated/works/thumb/water-tree-silver-blossoms-2026.jpg"
     },
     {
       "id": "feathered-butterfly-2026",
@@ -556,9 +708,28 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/羽蝶 Feathered Butterfly 2026 Oil on Wood 50 x 40 cm.jpg",
-      "sort_order": 16,
+      "sort_order": 24,
       "image_web": "assets/generated/works/web/feathered-butterfly-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/feathered-butterfly-2026.jpg"
+    },
+    {
+      "id": "blue-hole-2026",
+      "slug": "blue-hole-2026",
+      "year": 2026,
+      "title_en": "Blue Hole",
+      "title_zh": "蓝洞",
+      "medium_en": "Oil on Wood",
+      "medium_zh": "Oil on Wood",
+      "size": "40 x 40 cm",
+      "size_bucket": "40 x 40 cm",
+      "series_slot": "series-b",
+      "orientation": "square",
+      "duplicate_index": 1,
+      "public": true,
+      "source_path": "作品_整理后/2026.10.8更新的一些！/蓝洞 Blue Hole 2026 Oil on Wood 40 x 40 cm.jpg",
+      "sort_order": 25,
+      "image_web": "assets/generated/works/web/blue-hole-2026.jpg",
+      "image_thumb": "assets/generated/works/thumb/blue-hole-2026.jpg"
     },
     {
       "id": "gravity-2026",
@@ -575,7 +746,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/自重 Gravity 2026 Oil on Wood 40 x 40 cm.jpg",
-      "sort_order": 17,
+      "sort_order": 26,
       "image_web": "assets/generated/works/web/gravity-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/gravity-2026.jpg"
     },
@@ -594,7 +765,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/被偷走的欲望 Stolen Desire 2026 Oil on Wood 40 x 40 cm.jpg",
-      "sort_order": 18,
+      "sort_order": 27,
       "image_web": "assets/generated/works/web/stolen-desire-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/stolen-desire-2026.jpg"
     },
@@ -613,7 +784,7 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/爱浪 Tides of Love 2026 Oil on Wood 40 x 40 cm.jpg",
-      "sort_order": 19,
+      "sort_order": 28,
       "image_web": "assets/generated/works/web/tides-of-love-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/tides-of-love-2026.jpg"
     },
@@ -632,9 +803,28 @@ window.LUHAN_SITE_DATA = {
       "duplicate_index": 1,
       "public": true,
       "source_path": "作品_整理后/2026/那时我们很幸福 We Were Happy Then 2026 Oil on Wood 40 x 40 cm.jpg",
-      "sort_order": 20,
+      "sort_order": 29,
       "image_web": "assets/generated/works/web/we-were-happy-then-2026.jpg",
       "image_thumb": "assets/generated/works/thumb/we-were-happy-then-2026.jpg"
+    },
+    {
+      "id": "white-night-2026",
+      "slug": "white-night-2026",
+      "year": 2026,
+      "title_en": "White Night",
+      "title_zh": "白夜",
+      "medium_en": "Oil on Wood",
+      "medium_zh": "Oil on Wood",
+      "size": "40 x 40 cm",
+      "size_bucket": "40 x 40 cm",
+      "series_slot": "series-b",
+      "orientation": "square",
+      "duplicate_index": 1,
+      "public": true,
+      "source_path": "作品_整理后/2026.10.8更新的一些！/白夜 White Night 2026 Oil on Wood 40 x 40 cm.jpg",
+      "sort_order": 30,
+      "image_web": "assets/generated/works/web/white-night-2026.jpg",
+      "image_thumb": "assets/generated/works/thumb/white-night-2026.jpg"
     },
     {
       "id": "half-the-sky-half-the-sea-2025",
