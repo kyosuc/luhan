@@ -946,6 +946,7 @@ body[data-page="home"] .site-header {
   margin: 0;
   color: var(--text);
   line-height: 1.55;
+  white-space: pre-line;
 }
 
 .exhibition-divider {
@@ -995,10 +996,12 @@ body[data-page="home"] .site-header {
 
 .exhibition-schedule-row__date {
   color: var(--text);
+  white-space: pre-line;
 }
 
 .exhibition-schedule-row__time {
   color: var(--text-soft);
+  white-space: pre-line;
 }
 
 .exhibition-media-stage {

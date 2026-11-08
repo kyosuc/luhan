@@ -141,7 +141,7 @@ const EXHIBITION_RECORDS = [
     },
     lead: {
       en: "Five new paintings at ART021 Shanghai 2026.",
-      zh: "5张新作参加2026上海ART021。"
+      zh: "5 张新作参加2026上海ART021。"
     },
     details: [
       {
@@ -154,7 +154,7 @@ const EXHIBITION_RECORDS = [
       },
       {
         label: { en: "Venue", zh: "地点" },
-        value: { en: "Shanghai Exhibition Centre, Jing'an, Shanghai", zh: "上海展览中心，上海市静安区延安中路1000号" }
+        value: { en: "Shanghai Exhibition Centre\n1000 Middle Yan'an Road, Jing'an District, Shanghai", zh: "上海展览中心\n上海市静安区延安中路1000号" }
       }
     ],
     schedule: [
@@ -165,10 +165,10 @@ const EXHIBITION_RECORDS = [
       },
       {
         label: { en: "Public Days", zh: "公众开放" },
-        date: { en: "November 13-14, 2026", zh: "2026年11月13日至14日" },
+        date: { en: "November 13, 2026\nNovember 14, 2026", zh: "2026年11月13日\n2026年11月14日" },
         time: {
-          en: "Nov 13: 11:00-20:00 / Nov 14: 11:00-18:00",
-          zh: "11月13日：11:00-20:00 / 11月14日：11:00-18:00"
+          en: "11:00-20:00\n11:00-18:00",
+          zh: "11:00-20:00\n11:00-18:00"
         }
       }
     ],
