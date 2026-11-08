@@ -159,9 +159,17 @@ const EXHIBITION_RECORDS = [
     ],
     schedule: [
       {
-        label: { en: "Fair Dates", zh: "展期" },
-        date: { en: "November 11-14, 2026", zh: "2026年11月11日至14日" },
-        time: ""
+        label: { en: "Collectors Preview", zh: "藏家预览" },
+        date: { en: "November 11-12, 2026", zh: "2026年11月11日至12日" },
+        time: "15:00-20:00"
+      },
+      {
+        label: { en: "Public Days", zh: "公众开放" },
+        date: { en: "November 13-14, 2026", zh: "2026年11月13日至14日" },
+        time: {
+          en: "Nov 13: 11:00-20:00 / Nov 14: 11:00-18:00",
+          zh: "11月13日：11:00-20:00 / 11月14日：11:00-18:00"
+        }
       }
     ],
     images: [
@@ -984,7 +992,7 @@ function renderExhibitionsPage() {
         <span class="exhibition-schedule-row__label">${escapeHtml(getExhibitionValue(item.label))}</span>
         <div class="exhibition-schedule-row__body">
           <span class="exhibition-schedule-row__date">${escapeHtml(getExhibitionValue(item.date))}</span>
-          ${item.time ? `<span class="exhibition-schedule-row__time">${escapeHtml(item.time)}</span>` : ""}
+          ${item.time ? `<span class="exhibition-schedule-row__time">${escapeHtml(getExhibitionValue(item.time))}</span>` : ""}
         </div>
       </div>
     `).join("");
