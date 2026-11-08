@@ -165,11 +165,16 @@ const EXHIBITION_RECORDS = [
       },
       {
         label: { en: "Public Days", zh: "公众开放" },
-        date: { en: "November 13, 2026\nNovember 14, 2026", zh: "2026年11月13日\n2026年11月14日" },
-        time: {
-          en: "11:00-20:00\n11:00-18:00",
-          zh: "11:00-20:00\n11:00-18:00"
-        }
+        sessions: [
+          {
+            date: { en: "November 13, 2026", zh: "2026年11月13日" },
+            time: "11:00-20:00"
+          },
+          {
+            date: { en: "November 14, 2026", zh: "2026年11月14日" },
+            time: "11:00-18:00"
+          }
+        ]
       }
     ],
     images: [
@@ -987,15 +992,26 @@ function renderExhibitionsPage() {
       </div>
     `).join("");
 
-    const scheduleMarkup = (record.schedule || []).map((item) => `
-      <div class="exhibition-schedule-row">
-        <span class="exhibition-schedule-row__label">${escapeHtml(getExhibitionValue(item.label))}</span>
-        <div class="exhibition-schedule-row__body">
-          <span class="exhibition-schedule-row__date">${escapeHtml(getExhibitionValue(item.date))}</span>
-          ${item.time ? `<span class="exhibition-schedule-row__time">${escapeHtml(getExhibitionValue(item.time))}</span>` : ""}
+    const scheduleMarkup = (record.schedule || []).map((item) => {
+      const sessionsMarkup = (item.sessions || []).map((session) => `
+        <div class="exhibition-schedule-row__session">
+          <span class="exhibition-schedule-row__date">${escapeHtml(getExhibitionValue(session.date))}</span>
+          ${session.time ? `<span class="exhibition-schedule-row__time">${escapeHtml(getExhibitionValue(session.time))}</span>` : ""}
         </div>
-      </div>
-    `).join("");
+      `).join("");
+
+      return `
+        <div class="exhibition-schedule-row">
+          <span class="exhibition-schedule-row__label">${escapeHtml(getExhibitionValue(item.label))}</span>
+          <div class="exhibition-schedule-row__body">
+            ${sessionsMarkup || `
+              <span class="exhibition-schedule-row__date">${escapeHtml(getExhibitionValue(item.date))}</span>
+              ${item.time ? `<span class="exhibition-schedule-row__time">${escapeHtml(getExhibitionValue(item.time))}</span>` : ""}
+            `}
+          </div>
+        </div>
+      `;
+    }).join("");
 
     return `
       <section class="content-panel reveal exhibition-panel${record.preserveImageRatio ? " exhibition-panel--preserve-ratio" : ""}" data-exhibition-record="${record.id}">
