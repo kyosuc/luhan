@@ -133,6 +133,51 @@ const HOME_NAME_COLOR_PALETTE = [
 
 const EXHIBITION_RECORDS = [
   {
+    id: "shanghai-art021-2026",
+    preserveImageRatio: true,
+    title: {
+      en: "2026 ART021 Shanghai",
+      zh: "2026 ART021 上海"
+    },
+    lead: {
+      en: "Lu Han presented by Line Gallery at ART021 Shanghai 2026.",
+      zh: "璐汗携手玉兰堂 Line Gallery 参加 2026 ART021 上海廿一当代艺术博览会。"
+    },
+    details: [
+      {
+        label: { en: "Booth", zh: "展位" },
+        value: { en: "E15", zh: "E15" }
+      },
+      {
+        label: { en: "Gallery", zh: "画廊" },
+        value: { en: "Line Gallery", zh: "玉兰堂 Line Gallery" }
+      },
+      {
+        label: { en: "Venue", zh: "地点" },
+        value: { en: "Shanghai Exhibition Centre, Jing'an, Shanghai", zh: "上海展览中心，上海市静安区延安中路1000号" }
+      }
+    ],
+    schedule: [
+      {
+        label: { en: "Fair Dates", zh: "展期" },
+        date: { en: "November 11-14, 2026", zh: "2026年11月11日至14日" },
+        time: ""
+      }
+    ],
+    images: [
+      {
+        src: "assets/generated/exhibitions/shanghai-art021-2026/fair-poster.jpg",
+        alt: { en: "Line Gallery booth E15 poster for ART021 Shanghai 2026", zh: "2026 ART021 上海 Line Gallery E15 展位海报" },
+        ratio: "1291 / 1853"
+      },
+      {
+        src: "assets/generated/exhibitions/shanghai-art021-2026/spirit-perch.jpg",
+        alt: { en: "Spirit Perch, 2026, oil on canvas", zh: "《三足乌·何枝可依》，2026，布面油画" },
+        ratio: "1167 / 1632"
+      }
+    ]
+  },
+  {
     id: "beijing-dangdai-2026",
     preserveImageRatio: true,
     title: {
