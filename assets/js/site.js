@@ -140,8 +140,8 @@ const EXHIBITION_RECORDS = [
       zh: "2026 ART021 上海"
     },
     lead: {
-      en: "Lu Han presented by Line Gallery at ART021 Shanghai 2026.",
-      zh: "璐汗携手玉兰堂 Line Gallery 参加 2026 ART021 上海廿一当代艺术博览会。"
+      en: "Five new paintings at ART021 Shanghai 2026.",
+      zh: "5张新作参加2026上海ART021。"
     },
     details: [
       {
